@@ -99,7 +99,7 @@ class InfoPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Expanded ocupa todo o espaço disponível na vertical
+    // Expanded ocupa todo o espaço disponíve na vertical
     return Expanded(
         child: Container(
             color: Colors.yellow[200], // ou: Colors.yellow.shade200
