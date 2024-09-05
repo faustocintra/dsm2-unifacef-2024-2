@@ -11,7 +11,9 @@
     # pkgs.python311Packages.pip
     # pkgs.nodejs_20
     # pkgs.nodePackages.nodemon
+    pkgs.go
     pkgs.jdk11
+    pkgs.flutter
   ];
 
   # Sets environment variables in the workspace
