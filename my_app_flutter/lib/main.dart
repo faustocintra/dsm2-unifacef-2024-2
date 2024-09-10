@@ -25,12 +25,7 @@ class Layout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      children: [
-        Expanded(
-          child: LightBlueBox(),
-        ),
-        FooterIcons(), 
-      ],
+      children: [IconsRow(), Stacked(), InfoPanel()],
     );
   }
 }
@@ -41,12 +36,12 @@ class IconsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround, // para deixar os icones espaçados entre si
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Icon(Icons.home),
         Icon(Icons.history),
         Icon(Icons.account_balance),
-        Icon(Icons.open_in_new),
+        Icon(Icons.open_in_new)
       ],
     );
   }
@@ -58,22 +53,75 @@ class LightBlueBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity, // ocupa todo espaço disponivel na tela 
-      width: double.infinity,
-      color: Colors.lightBlue[500],
-    );
+        height: 250,
+        width: double.infinity, // largura total
+        color: Colors.lightBlue[500]);
   }
 }
 
-class FooterIcons extends StatelessWidget {
-  const FooterIcons({super.key});
+class IndigoBox extends StatelessWidget {
+  const IndigoBox({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      color: Colors.white,
-      child: const IconsRow(),
-    );
+        height: 150,
+        width: 320,
+        color: Colors.indigo.shade800 // ou: Colors.indigo[800]
+        );
+  }
+}
+
+class Logo extends StatelessWidget {
+  const Logo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(
+        'https://www.unifacef.com.br/wp-content/uploads/2016/02/logo-branco.png');
+  }
+}
+
+class Stacked extends StatelessWidget {
+  const Stacked({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Stack exibe seus filhos (children) emStackeddos uns sobre os outros
+    return const Stack(
+        alignment: Alignment.center,
+        children: [LightBlueBox(), IndigoBox(), Logo()]);
+  }
+}
+
+class InfoPanel extends StatelessWidget {
+  const InfoPanel({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Expanded ocupa todo o espaço disponível na vertical
+    return Expanded(
+        child: Container(
+            color: Colors.cyan[100], // ou: Colors.yellow.shade200
+            padding: const EdgeInsets.all(20),
+            child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Layout Flutter",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold)),
+                  Text("Desenvolvido por Eder Jr dev",
+                      textAlign: TextAlign.right,
+                      style:
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 16)),
+                  Text("Uni-FACEF",
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 12))
+                ])));
   }
 }
