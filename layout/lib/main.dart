@@ -102,22 +102,26 @@ class InfoPanel extends StatelessWidget {
     // Expanded ocupa todo o espaço disponível na vertical
     return Expanded(
         child: Container(
-            color: Colors.yellow[200], // ou: Colors.yellow.shade200
+            color: Colors.cyan[100], // ou: Colors.yellow.shade200
             padding: const EdgeInsets.all(20),
-            child: Column(
+            child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Exemplo de layout Flutter",
+                  Text("Layout Flutter",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.indigo.shade600,
+                          color: Colors.black,
                           fontSize: 30,
                           fontWeight: FontWeight.bold)),
-                  const Text("Desenvolvido por Fausto G. Cintra",
+                  Text("Desenvolvido por Igor Campos",
                       textAlign: TextAlign.right,
                       style:
-                          TextStyle(fontStyle: FontStyle.italic, fontSize: 16))
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 16)),
+                  Text("Uni-FACEF",
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 12))
                 ])));
   }
 }
