@@ -1,3 +1,5 @@
 {
-    "editor.fontFamily": "monospace"
+    "editor.fontFamily": "monospace",
+    "IDX.aI.enableInlineCompletion": true,
+    "IDX.aI.enableCodebaseIndexing": true
 }
