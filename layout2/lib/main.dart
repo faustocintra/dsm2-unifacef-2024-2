@@ -44,7 +44,7 @@ class Layout extends StatelessWidget {
           children: [
             //Expandimos ela para ocupar toda o espaço disponível do pai 
             Expanded(
-              //Aqui vamos ter um filho, que vai ter o tamanho de 150 e cor purple, e filho dentro do filho para adicionarmos o texto
+              //Aqui teremos um filho, que vai ter o tamanho de 150 e cor purple, e um filho dentro do filho para adicionarmos o texto
                 child: Container(
               color: Colors.purple[400],
               height: 150,
@@ -64,7 +64,7 @@ class Layout extends StatelessWidget {
           children: [
             //Expandimos ela para ocupar toda o espaço disponível do pai 
             Expanded(
-              //Aqui vamos ter um filho, que vai ter o tamanho de 150 e cor green, e filho dentro do filho para adicionarmos o texto
+              //Aqui temos um filho, que vai ter o tamanho de 150 e cor green, e um filho dentro do filho para adicionarmos o texto
                 child: Container(
               color: Colors.green[400],
               height: 150,
@@ -76,11 +76,15 @@ class Layout extends StatelessWidget {
             ))
           ],
         ),
-         //Aqui começamos a terceira linha, aqui novamente usamos o extended para extender verticalmente porque o pai é uma coluna
+         //Aqui começamos uma coluna, aqui novamente usamos o extended para extender verticalmente porque o pai é uma coluna
         Expanded(
+          //Aqui dentro da coluna abrimos uma linha para inserirmos mais de uma coluna
             child: Row(
+          // Forçamos essa colunas ficarem esticadas na altura maxíma
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            //Cada filho é uma coluna, e recebe suas caracteristicas propría de cor
+            //Filho 1 recebe a cor blue, e dentro dele existe outra coluna que vai receber um children com 2 icones
             Expanded(
                 child: Container(
               color: Colors.blue[400],
@@ -92,6 +96,7 @@ class Layout extends StatelessWidget {
                 ],
               ),
             )),
+            //Filho 2 recebe a cor amber, e dentro dele existe outra coluna que vai receber um children com icone
             Expanded(
                 child: Container(
               color: Colors.amber[400],
@@ -102,6 +107,7 @@ class Layout extends StatelessWidget {
                 ],
               ),
             )),
+            //Filho 3 recebe a cor pink, e dentro dele existe outra coluna que vai receber um children com icone
             Expanded(
                 child: Container(
               color: Colors.pink[400],
@@ -112,6 +118,7 @@ class Layout extends StatelessWidget {
                 ],
               ),
             )),
+            //Filho 4 recebe a cor pink, e dentro dele existe outra coluna que vai receber um children com icone
             Expanded(
                 child: Container(
               color: Colors.cyanAccent[400],
@@ -124,6 +131,8 @@ class Layout extends StatelessWidget {
             )),
           ],
         )),
+        //Aqui começamos mais um linha adicional, seguindo o mesmo processo de extender a linha ao máximo
+        //Essa linha contém a altura de 150, dentro dele tem um child dentro para o texto 
         Row(
           children: [
             Expanded(
