@@ -40,10 +40,20 @@ class Layout extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: Container(
-              color: Colors.purple[400],
-              height: 150,
-            ))
+              child: Container(
+                color: Colors.purple[400],
+                height: 150,
+                child: Center(
+                  child: Text(
+                    "Thiago Correia Azarias", 
+                    style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white, 
+                  ),
+                ),
+              ),
+            )),
           ],
         ),
         Row(
@@ -52,6 +62,16 @@ class Layout extends StatelessWidget {
                 child: Container(
               color: Colors.green[400],
               height: 150,
+              child: Center(
+                  child: Text(
+                    "19/09/2024", 
+                    style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.orange[300], 
+                  ),
+                ),
+              ),
             ))
           ],
         ),
@@ -59,11 +79,38 @@ class Layout extends StatelessWidget {
             child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(child: Container(color: Colors.blue[400])),
-            Expanded(child: Container(color: Colors.amber[400])),
-            Expanded(child: Container(color: Colors.pink[400])),
+            Expanded(
+              child: Container(
+                color: Colors.blue[400]
+               )
+              
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.amber[400]
+              )
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.pink[400]
+              )
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.lime[400]
+              )
+            ),
           ],
-        ))
+        )),
+        Row(
+          children: [
+            Expanded(
+                child: Container(
+              color: Colors.brown[400],
+              height: 150,
+            ))
+          ],
+        ),
       ],
     );
   }
