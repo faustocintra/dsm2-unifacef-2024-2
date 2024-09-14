@@ -75,24 +75,78 @@ class Layout extends StatelessWidget {
           ],
         ),
         Expanded(
-            child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(child: Container(color: Colors.blue[400])),
-            Expanded(child: Container(color: Colors.amber[400])),
-            Expanded(child: Container(color: Colors.pink[400])),
-            Expanded(child: Container(color: Colors.amber[400])),
-          ],
-        )),
-        Row(
-          children: [
-            Expanded(
-                child: Container(
-              color: Colors.green[400],
-              height: 150,
-            ))
-          ],
+  child: Row(
+    crossAxisAlignment: CrossAxisAlignment.stretch, 
+    children: [
+      // Primeira coluna com dois ícones (superior e inferior)
+      Expanded(
+        child: Container(
+          color: Colors.blue[400],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+            children: [
+              Icon(Icons.home, size: 50, color: Colors.white), // Ícone superior
+              Icon(Icons.phone, size: 50, color: Colors.white), // Ícone inferior
+            ],
+          ),
         ),
+      ),
+      
+      // Segunda coluna com um ícone centralizado
+      Expanded(
+        child: Container(
+          color: Colors.amber[400],
+          child: Center(
+            child: Icon(Icons.email, size: 50, color: Colors.white), 
+          ),
+        ),
+      ),
+      
+      // Terceira coluna com um ícone centralizado
+      Expanded(
+        child: Container(
+          color: Colors.pink[400],
+          child: Center(
+            child: Icon(Icons.alarm, size: 50, color: Colors.white), 
+          ),
+        ),
+      ),
+      
+      // Quarta coluna com um ícone centralizado
+      Expanded(
+        child: Container(
+          color: Colors.amber[400],
+          child: Center(
+            child: Icon(Icons.accessibility, size: 50, color: Colors.white), 
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+,
+        Row(
+  children: [
+    Expanded(
+      child: Container(
+        color: Colors.green[400],
+        height: 150,
+        child: Align(
+          alignment: Alignment.centerRight, // Alinha o texto à direita
+          child: Text(
+            'Sistemas de Informação', // adicionando o nome da turma
+            style: TextStyle(
+              fontSize: 25, // Fonte tamanho 25
+              fontStyle: FontStyle.italic, // Texto em itálico
+              color: Colors.white, 
+            ),
+          ),
+        ),
+      ),
+    ),
+  ],
+)
+
       ],
     );
   }
