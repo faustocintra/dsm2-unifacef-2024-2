@@ -105,7 +105,7 @@ class InfoPanel extends StatelessWidget {
     return Expanded(
         child: Container(
       color: Colors.yellow[200],
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -131,3 +131,4 @@ class InfoPanel extends StatelessWidget {
     ));
   }
 }
+
