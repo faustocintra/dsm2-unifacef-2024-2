@@ -10,17 +10,13 @@
   }
 }
 
-@@ -43,7 +42,8 @@ class IconsRow extends StatelessWidget {
+class IconsRow extends StatelessWidget {
         Icon(Icons.history),
         Icon(Icons.account_balance),
         Icon(Icons.open_in_new)
-      ], );
-      ],
-    );
   }
-}
 
-@@ -53,9 +53,71 @@ class LightBlueBox extends StatelessWidget {
+class LightBlueBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +26,7 @@
     );
         height: 250,
         width: double.infinity, // largura total
-        color: Colors.lightBlue[500]);
+        color: Colors.lightBlue[500];
   }
 }
 
