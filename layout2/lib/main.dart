@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(16),
               child: const Text(
-                'Eder Junior Alves Silva',
+                'Igor Pereira Campos',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold, // Negrito
