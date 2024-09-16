@@ -114,7 +114,7 @@ class InfoPanel extends StatelessWidget {
                           color: Colors.indigo.shade600,
                           fontSize: 30,
                           fontWeight: FontWeight.bold)),
-                  const Text("Desenvolvido por Arthur Saltori Stante",
+                  const Text("Desenvolvido por Breno Martins Oliveira",
                       textAlign: TextAlign.right,
                       style:
                           TextStyle(fontStyle: FontStyle.italic, fontSize: 16))
