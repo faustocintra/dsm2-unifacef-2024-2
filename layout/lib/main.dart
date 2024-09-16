@@ -55,7 +55,7 @@ class LightBlueBox extends StatelessWidget {
     return Container(
         height: 250,
         width: double.infinity, // largura total
-        color: Colors.lightBlue[500]);
+        color: Colors.lightBlue[800]);
   }
 }
 
@@ -114,7 +114,7 @@ class InfoPanel extends StatelessWidget {
                           color: Colors.indigo.shade600,
                           fontSize: 30,
                           fontWeight: FontWeight.bold)),
-                  const Text("Desenvolvido por Fausto G. Cintra",
+                  const Text("Desenvolvido por Arthur Saltori Stante",
                       textAlign: TextAlign.right,
                       style:
                           TextStyle(fontStyle: FontStyle.italic, fontSize: 16))
