@@ -1,123 +1,112 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      title: 'Exercício de Layout',
       home: Scaffold(
-        body: Center(
-          child: Layout(),
+        backgroundColor: Colors.grey[400], // Fundo da tela
+        appBar: AppBar(
+          title: const Text('Exercício de Layout'),
+        ),
+        body: Column(
+          children: [
+            Container(
+              color: Colors.red[400],
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(16),
+              child: const Text(
+                'Eder Junior Alves Silva',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold, // Negrito
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                'Data da Prova: 12/09/2024',
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.deepOrange[300], // Laranja escuro tonalidade 300
+                ),
+                textAlign: TextAlign.center, 
+              ),
+            ),
+            // Quatro colunas com ícones e cores de fundo em tonalidade 400
+            Expanded(
+              child: Row(
+                children: [
+                  // Primeira coluna com dois ícones
+                  Expanded(
+                    child: Container(
+                      color: Colors.purple[400],
+                      child: const Column(
+                        children: [
+                          Icon(Icons.code, size: 50, color: Colors.black), // Ícone (superior)
+                          Spacer(), // Espaçamento entre os ícones
+                          Icon(Icons.bug_report, size: 50, color: Colors.black), // Ícone (inferior)
+                        ],
+                      ),
+                    ),
+                  ),
+                  // Segunda coluna com um ícone
+                  Expanded(
+                    child: Container(
+                      color: Colors.teal[400],
+                      child: const Center(
+                        child: Icon(Icons.computer, size: 50, color: Colors.black), // Ícone de computador
+                      ),
+                    ),
+                  ),
+                  // Terceira coluna com um ícone
+                  Expanded(
+                    child: Container(
+                      color: Colors.orange[400],
+                      child: const Center(
+                        child: Icon(Icons.developer_mode, size: 50, color: Colors.black), // Ícone de desenvolvedor
+                      ),
+                    ),
+                  ),
+                  // Quarta coluna com um ícone
+                  Expanded(
+                    child: Container(
+                      color: Colors.green[400],
+                      child: const Center(
+                        child: Icon(Icons.memory, size: 50, color: Colors.black), // Ícone de memória
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // Última linha: Nome da turma
+            Container(
+              color: Colors.blue[400], // Cor de fundo para a última linha
+              alignment: Alignment.centerRight, // Alinhamento à direita
+              padding: const EdgeInsets.all(16),
+              child: const Text(
+                'Turma: Engenharia de Software',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontStyle: FontStyle.italic, // itálico
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.right, // Alinhamento à direita
+              ),
+            ),
+          ],
         ),
       ),
     );
-  }
-}
-
-class Layout extends StatelessWidget {
-  const Layout({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [IconsRow(), Stacked(), InfoPanel()],
-    );
-  }
-}
-
-class IconsRow extends StatelessWidget {
-  const IconsRow({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Icon(Icons.home),
-        Icon(Icons.history),
-        Icon(Icons.account_balance),
-        Icon(Icons.open_in_new)
-      ],
-    );
-  }
-}
-
-class LightBlueBox extends StatelessWidget {
-  const LightBlueBox({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: 250,
-        width: double.infinity, // largura total
-        color: Colors.lightBlue[500]);
-  }
-}
-
-class IndigoBox extends StatelessWidget {
-  const IndigoBox({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: 150,
-        width: 320,
-        color: Colors.indigo.shade800 // ou: Colors.indigo[800]
-        );
-  }
-}
-
-class Logo extends StatelessWidget {
-  const Logo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Image.network(
-        'https://www.unifacef.com.br/wp-content/uploads/2016/02/logo-branco.png');
-  }
-}
-
-class Stacked extends StatelessWidget {
-  const Stacked({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // Stack exibe seus filhos (children) emStackeddos uns sobre os outros
-    return const Stack(
-        alignment: Alignment.center,
-        children: [LightBlueBox(), IndigoBox(), Logo()]);
-  }
-}
-
-class InfoPanel extends StatelessWidget {
-  const InfoPanel({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // Expanded ocupa todo o espaço disponível na vertical
-    return Expanded(
-        child: Container(
-            color: Colors.yellow[200], // ou: Colors.yellow.shade200
-            padding: const EdgeInsets.all(20),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Exemplo de layout Flutter",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.indigo.shade600,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold)),
-                  const Text("Desenvolvido por Fausto G. Cintra",
-                      textAlign: TextAlign.right,
-                      style:
-                          TextStyle(fontStyle: FontStyle.italic, fontSize: 16))
-                ])));
   }
 }
