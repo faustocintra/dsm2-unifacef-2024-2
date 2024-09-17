@@ -1,22 +1,38 @@
-class Layout extends StatelessWidget {
-  const Layout({super.key});
+import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Primeira linha 
+        // Primeira linha: Nome completo
         Row(
           children: [
             Expanded(
               child: Container(
                 color: Colors.purple[400],
                 height: 100,
+                child: const Center(
+                  child: Text(
+                    'Maria Marcela Sousa Alves',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
             ),
           ],
         ),
-        // Segunda linha
+        // Segunda linha (placeholder por enquanto)
         Row(
           children: [
             Expanded(
