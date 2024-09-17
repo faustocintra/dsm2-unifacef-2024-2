@@ -55,7 +55,7 @@ class Layout extends StatelessWidget {
         ),
         Row(//segunda linha com a data da prova
           children: [
-            Expanded(child: Container(color: Colors.green[400], height: 100,//coluna
+            Expanded(child: Container(color: Colors.green[400], height: 100,
              child: const Center(
                   child: Text(
                     'Data da Prova: 19/09/2024', //data da prova
