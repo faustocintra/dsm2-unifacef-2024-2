@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Método build, que contrói a interface do App
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  //Construtor da página inicial
   const MyHomePage({super.key, required this.title});
   final String title;
 
@@ -59,9 +61,9 @@ class Layout extends StatelessWidget {
           height: 100,
           child: Center(
             child: Text(
-              '19/09/2024',
+              '20/09/2024',
               style: TextStyle(
-                color: Colors.orange[300],
+                color: Colors.lime[300],
                 fontSize: 20,
               ),
             ),
@@ -78,17 +80,17 @@ class Layout extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(Icons.star, size: 50, color: Colors.white),
+                      Icon(Icons.home, size: 50, color: Colors.white),
                       Icon(Icons.favorite, size: 50, color: Colors.white),
                     ],
                   ),
                 ),
-              ), //Primeira coluna
+              ), // Primeira Coluna
               Expanded(
                 child: Container(
                   color: Colors.yellow[400],
                   child: Center(
-                    child: Icon(Icons.music_note, size: 50, color: Colors.white),
+                    child: Icon(Icons.settings, size: 50, color: Colors.white),
                   ),
                 ),
               ),// Segunda Coluna
@@ -96,7 +98,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.orange[400],
                   child: Center(
-                    child: Icon(Icons.camera, size: 50, color: Colors.white),
+                    child: Icon(Icons.alarm, size: 50, color: Colors.white),
                   ),
                 ),
               ),// Terceira Coluna
@@ -104,7 +106,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.teal[400],
                   child: Center(
-                    child: Icon(Icons.brush, size: 50, color: Colors.white),
+                    child: Icon(Icons.beach_access, size: 50, color: Colors.white),
                   ),
                 ),
               ),// Quarta Coluna
@@ -113,14 +115,14 @@ class Layout extends StatelessWidget {
         ),
         // Terceira row
         Container(
-          color: Colors.indigo[400],
+          color: Colors.blue[400],
           height: 80,
           child: Align(
             alignment: Alignment.centerRight,
             child: Padding(
               padding: const EdgeInsets.only(right: 20),
               child: Text(
-                'Engenharia de software',
+                'Engenharia de Software',
                 style: TextStyle(
                   color: Colors.white,
                   fontStyle: FontStyle.italic,
