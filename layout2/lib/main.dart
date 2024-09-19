@@ -78,11 +78,11 @@ class DateBox extends StatelessWidget {
       color: Colors.pink[400], 
       height: 100,
       width: double.infinity,
-      child: const Center(
+      child: Center(
         child: Text(
-          'Data da Prova: 12/09/2024',
+          'Data da Prova: 19/09/2024',
           style: TextStyle(
-            color: Colors.orangeAccent,
+            color: Colors.lime[200],
             fontSize: 20,
           ),
         ),
