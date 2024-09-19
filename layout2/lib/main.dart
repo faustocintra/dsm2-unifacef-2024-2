@@ -156,10 +156,6 @@ class Layout extends StatelessWidget {
 //Para realizar as modificações solicitadas no código, eu segui o seguinte raciocínio:
 //Alteração da cor do texto da data para verde limão (tonalidade 200):
 //Eu ajustei a cor do texto da data modificando a propriedade color no estilo (TextStyle) da linha onde a data está sendo exibida. Escolhi a cor Colors.lime[200],que corresponde ao verde limão na tonalidade 200, conforme solicitado.
-//
 //Aplicação da cor branca para todos os ícones:
 //Para que todos os ícones ficassem na cor branca, adicionei a propriedade color: Colors.white em cada Icon presente nas colunas da terceira linha. Isso garantiu que todos os ícones tivessem a mesma cor, mantendo a consistência no design.
 //Eu procurei manter a estrutura original do layout2 que criei, realizando as alterações de forma direta, garantindo que o código continuasse organizado e claro.
-//
-//
-//
