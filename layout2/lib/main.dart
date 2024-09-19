@@ -29,10 +29,9 @@ class MyHomePage extends StatelessWidget {
     return const Scaffold(body: Layout());
   }
 }
-
+// Row com o nome
 class Layout extends StatelessWidget {
   const Layout({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -46,9 +45,9 @@ class Layout extends StatelessWidget {
                   child: const Center(
                     child: Text("Nicolas Torres Chiarelo",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30,
+                        color: Colors.white, // Utilizacao de cores
+                        fontWeight: FontWeight.bold, // estilo
+                        fontSize: 30, // tamanho da fonte 
                       ),
                     ),
                   ),
@@ -56,6 +55,7 @@ class Layout extends StatelessWidget {
              ),
           ],
         ),
+        // Row com data
         Row(
           children: [
             Expanded(
@@ -66,7 +66,7 @@ class Layout extends StatelessWidget {
                   child: Text(
                     "19/9/2024",
                     style: TextStyle(
-                      color: Colors.orange[300],
+                      color: Colors.lime[400],
                       fontSize: 20,
                     ),
                   ),
@@ -75,11 +75,12 @@ class Layout extends StatelessWidget {
             ),
           ],
         ),
+        // Cols com os icones
         Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(child: Container(color: Colors.blue[400], child: const Icon(Icons.home))),
+              Expanded(child: Container(color: Colors.blue[400], child: const Icon(Icons.home, color: Colors.white))),
               Expanded(
                 child: Center(
                   child: Stack(
@@ -88,19 +89,20 @@ class Layout extends StatelessWidget {
                       const Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(Icons.favorite),
-                          Icon(Icons.star),
+                          Icon(Icons.favorite, color: Colors.white),
+                          Icon(Icons.star, color: Colors.white),
                         ],
                       ),
                     ],
                   ),
                 ),
               ),
-              Expanded(child: Container(color: Colors.pink[400], child: const Icon(Icons.settings))),
-              Expanded(child: Container(color: Colors.grey[400], child: const Icon(Icons.person))),
+              Expanded(child: Container(color: Colors.pink[400], child: const Icon(Icons.settings, color: Colors.white))),
+              Expanded(child: Container(color: Colors.grey[400], child: const Icon(Icons.person, color: Colors.white))),
             ],
           ),
         ),
+        //Row nova 
         Row(
           children: [
             Expanded(
