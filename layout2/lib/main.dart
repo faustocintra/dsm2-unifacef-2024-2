@@ -69,9 +69,11 @@ class Layout extends StatelessWidget {
               color: Colors.green[400],
               height: 150,
               child: Text(
-                "19/Set/2024",
+                //Data alterada para 09 ao inves de set
+                "19/09/2024",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.orange[300], fontSize: 30),
+                //Texto em cor verde limão
+                style: TextStyle(color: Colors.lime[200], fontSize: 30),
               ),
             ))
           ],
@@ -91,8 +93,9 @@ class Layout extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
-                  Icon(Icons.home),
-                  Icon(Icons.home),
+                  //Icones alterado para a cor Branca
+                  Icon(Icons.home, color: Colors.white),
+                  Icon(Icons.ac_unit, color: Colors.white),
                 ],
               ),
             )),
@@ -103,7 +106,8 @@ class Layout extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
-                  Icon(Icons.home),
+                  //Icone alterado para a cor Branca
+                  Icon(Icons.access_alarm, color: Colors.white),
                 ],
               ),
             )),
@@ -114,7 +118,8 @@ class Layout extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
-                  Icon(Icons.home),
+                  //Icone alterado para a cor Branca
+                  Icon(Icons.accessibility, color: Colors.white),
                 ],
               ),
             )),
@@ -125,7 +130,8 @@ class Layout extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
-                  Icon(Icons.home),
+                  //Icone alterado para a cor Branca
+                  Icon(Icons.account_balance, color: Colors.white),
                 ],
               ),
             )),
@@ -137,7 +143,7 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
                 child: Container(
-              color: Colors.cyan[400],
+              color: Colors.orange[400],
               height: 150,
               child: const Text("Engenharia de Software - 6°Semestre",
                   textAlign: TextAlign.right,
