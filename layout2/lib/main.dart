@@ -69,7 +69,7 @@ class Layout extends StatelessWidget {
                 '19/09/2024',
                 style: TextStyle(
                   fontSize: 30,
-                  color: Colors.deepOrange[300], //cor
+                  color: Colors.lime[200], //cor
                 ),
                 textAlign: TextAlign.center, //alinhamento do texto
               ),
@@ -84,28 +84,28 @@ class Layout extends StatelessWidget {
               color: Colors.purple[400],
                 child: const Column( //coluna com dois icones
                   children: [
-                    Icon(Icons.android, size: 50, color: Colors.black), // icone superior
+                    Icon(Icons.android, size: 50, color: Colors.white), // cor do icone superior trocada para branca
                     Spacer(), // espaçamento dos ícones
-                    Icon(Icons.smartphone, size: 50, color: Colors.black), // icone inferior
+                    Icon(Icons.smartphone, size: 50, color: Colors.white), // cor do icone inferior trocada para branca
                   ],
                 )
               )),
             Expanded(child: Container(
               color: Colors.cyan[400],
                 child: const Center( //coluna com um icone
-                  child: Icon(Icons.code, size: 50, color: Colors.black), // icone
+                  child: Icon(Icons.code, size: 50, color: Colors.white), // cor do icone trocada para branca
                 ),
               )),
             Expanded(child: Container(
               color: Colors.teal[400],
                 child: const Center( //coluna com um icone
-                  child: Icon(Icons.code_off, size: 50, color: Colors.black), // icone
+                  child: Icon(Icons.code_off, size: 50, color: Colors.white), // cor do icone trocada para branca
                 ),
               )),
             Expanded(child: Container( 
               color: Colors.lime[400],
                 child: const Center( //coluna com um icone
-                  child: Icon(Icons.devices, size: 50, color: Colors.black), // icone
+                  child: Icon(Icons.devices, size: 50, color: Colors.white), // cor do icone trocada para branca
                 ),
               )),
           ],
