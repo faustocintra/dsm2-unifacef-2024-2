@@ -42,13 +42,13 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                color: Colors.purple[400],
+                color: Colors.purple[400], // Define o fundo como roxo
                 height: 100,
                 child: const Center(
                   child: Text(
                     'Maria Marcela Sousa Alves',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.white, // Texto em branco
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
@@ -64,13 +64,14 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                color: Colors.green[400],
+                color: Colors
+                    .greenAccent[200], // Fundo verde limão (tonalidade 200)
                 height: 100,
                 child: const Center(
                   child: Text(
                     '19/09/2024',
                     style: TextStyle(
-                      color: Colors.orangeAccent,
+                      color: Colors.white, // Texto em branco
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
@@ -88,12 +89,17 @@ class Layout extends StatelessWidget {
             children: [
               // Coluna 1: Dois ícones (superior e inferior)
               Expanded(
-                child: Column(
-                  children: [
-                    const Icon(Icons.star, size: 50, color: Colors.red),
-                    const Spacer(),
-                    const Icon(Icons.favorite, size: 50, color: Colors.blue),
-                  ],
+                child: Container(
+                  color: Colors.green[400],
+                  child: Column(
+                    children: [
+                      const Icon(Icons.star,
+                          size: 50, color: Colors.white), // Ícone branco
+                      const Spacer(),
+                      const Icon(Icons.favorite,
+                          size: 50, color: Colors.white), // Ícone branco
+                    ],
+                  ),
                 ),
               ),
               // Coluna 2: Um ícone
@@ -101,22 +107,23 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.blue[400],
                   child: const Icon(Icons.access_alarm,
-                      size: 50, color: Colors.white),
+                      size: 50, color: Colors.white), // Ícone branco
                 ),
               ),
               // Coluna 3: Um ícone
               Expanded(
                 child: Container(
                   color: Colors.amber[400],
-                  child: const Icon(Icons.home, size: 50, color: Colors.white),
+                  child: const Icon(Icons.home,
+                      size: 50, color: Colors.white), // Ícone branco
                 ),
               ),
               // Coluna 4: Um ícone
               Expanded(
                 child: Container(
                   color: Colors.pink[400],
-                  child:
-                      const Icon(Icons.settings, size: 50, color: Colors.white),
+                  child: const Icon(Icons.settings,
+                      size: 50, color: Colors.white), // Ícone branco
                 ),
               ),
             ],
@@ -127,7 +134,7 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                color: Colors.orange[400],
+                color: Colors.orange[400], // Fundo laranja
                 height: 100,
                 child: const Align(
                   alignment: Alignment.centerRight,
@@ -138,7 +145,7 @@ class Layout extends StatelessWidget {
                       style: TextStyle(
                         fontStyle: FontStyle.italic,
                         fontSize: 25,
-                        color: Colors.black,
+                        color: Colors.black, // Texto preto
                       ),
                     ),
                   ),
