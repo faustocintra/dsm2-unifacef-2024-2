@@ -60,14 +60,14 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
                 child: Container(
-              color: Colors.green[400],
+              color: Colors.white,
               height: 150,
               padding: EdgeInsets.all(16.0), // Adicionando padding para espaçamento
                 alignment: Alignment.center,   // Centralizando o texto no container
                 child: Text(
                   '19/09/2024',
                   style: TextStyle(
-                    color: Colors.deepOrange,
+                    color: Color(0xFF99FF00), // Definindo texto na cor verde limão, na tonalidade 200
                     fontSize: 18.0, // Definindo um tamanho de fonte
                   ),
                 )
@@ -78,6 +78,7 @@ class Layout extends StatelessWidget {
   child: Row(
     crossAxisAlignment: CrossAxisAlignment.stretch, 
     children: [
+      // Ícones informados nas colunas, todos na cor branca
       // Primeira coluna com dois ícones (superior e inferior)
       Expanded(
         child: Container(
