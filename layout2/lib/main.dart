@@ -71,7 +71,7 @@ class Layout extends StatelessWidget {
                   child: Text(
                     '19/09/2024', // Data atualizada
                     style: TextStyle(
-                      color: Color(0xFFE6EE9C), // Verde limão (tonalidade 200)
+                      color: Color(0xFFE6EE9C), // troquei para Verde limão (tonalidade 200)
                       fontSize: 30,
                       fontWeight: FontWeight.normal,
                     ),
@@ -92,9 +92,9 @@ class Layout extends StatelessWidget {
                   color: Colors.blue[400],
                   child: Column(
                     children: const [
-                      Icon(Icons.home, size: 50, color: Colors.white), // Ícone superior branco
+                      Icon(Icons.home, size: 50, color: Colors.white), // Troquei o Ícone para branco
                       Spacer(), // Espaçamento entre ícones
-                      Icon(Icons.star, size: 50, color: Colors.white), // Ícone inferior branco
+                      Icon(Icons.star, size: 50, color: Colors.white), // Troquei o ícone para branco
                     ],
                   ),
                 ),
