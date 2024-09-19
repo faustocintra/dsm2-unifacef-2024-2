@@ -48,10 +48,10 @@ class Layout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // O layout da página é organizado como uma Coluna de widgets.
+    // O layout organizado com uma Coluna de widgets.
     return Column(
       children: [
-        // Primeira linha que contém um Container preenchendo toda a largura, com cor roxa e altura de 150.
+        // Primeira linha que contém um Container preenchendo toda a largura, com cor a roxa e altura de 150.
         Row(
           children: [
             Expanded(
@@ -63,9 +63,9 @@ class Layout extends StatelessWidget {
                   child: Text(
                     'Ian Augusto Alvarenga',
                     style: TextStyle(
-                      color: Colors.white, 
-                      fontSize: 30, 
-                      fontWeight: FontWeight.bold, 
+                      color: Colors.white, // Define cor da fonte como branca 
+                      fontSize: 30, // Define o tamanho da fonte
+                      fontWeight: FontWeight.bold, // Define fonte como em negrito
                     ),
                   ),
                 ),
@@ -73,7 +73,7 @@ class Layout extends StatelessWidget {
             ),
           ],
         ),
-        // Segunda linha semelhante, mas com cor verde.
+        // Segunda linha, mas com cor de fundo verde e escrita verde limão.
         Row(
           children: [
             Expanded(
@@ -84,9 +84,9 @@ class Layout extends StatelessWidget {
                   child: Text(
                     'Data da prova: 19/09/2024',
                     style: TextStyle(
-                      color: Colors.deepOrange[300], 
-                      fontSize: 30, 
-                      fontWeight: FontWeight.bold, 
+                      color: Colors.lightGreen[200], // Define a cor da fonte
+                      fontSize: 30, // Define o tamanho da fonte
+                      fontWeight: FontWeight.bold, // Define como escrita em negrito 
                     ),
                   ),
                 ),
@@ -102,17 +102,17 @@ class Layout extends StatelessWidget {
               // Primeira coluna com dois ícones, um em cima e outro embaixo.
               Expanded(
                 child: Container(
-                  color: Colors.blue[400],
+                  color: Colors.blue[400], // cor de fundo azul 
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween, // Distribui os ícones no topo e embaixo.
                     children: const [
                       Align(
-                        alignment: Alignment.topCenter,
-                        child: Icon(Icons.star, size: 40, color: Colors.white), // Ícone superior.
+                        alignment: Alignment.topCenter, // indicando item superior
+                        child: Icon(Icons.star, size: 40, color: Colors.white), // Ícone superior com cor branca e tamanho 40..
                       ),
                       Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Icon(Icons.star_border, size: 40, color: Colors.white), // Ícone inferior.
+                        alignment: Alignment.bottomCenter, // bottom indicando que é embaixo
+                        child: Icon(Icons.star_border, size: 40, color: Colors.white), // Ícone inferior com cor branca e tamanho 40.
                       ),
                     ],
                   ),
@@ -121,33 +121,34 @@ class Layout extends StatelessWidget {
               // Segunda coluna com um ícone centralizado.
               Expanded(
                 child: Container(
-                  color: Colors.amber[400],
+                  color: Colors.amber[400], // cor de fundo amarela 
                   child:  Center(
-                    child: Icon(Icons.favorite, size: 40, color: Colors.white), // Ícone central.
+                    child: Icon(Icons.favorite, size: 40, color: Colors.white), // Ícone central com cor branca e tamanho 40.
                   ),
                 ),
               ),
               // Terceira coluna com um ícone centralizado.
               Expanded(
                 child: Container(
-                  color: Colors.pink[400],
+                  color: Colors.pink[400], // cor de fundo rosa
                   child: Center(
-                    child: Icon(Icons.thumb_up, size: 40, color: Colors.white), // Ícone central.
+                    child: Icon(Icons.thumb_up, size: 40, color: Colors.white), // Ícone central com cor branca e tamanho 40..
                   ),
                 ),
               ),
               // Quarta coluna com um ícone centralizado.
               Expanded(
                 child: Container(
-                  color: Colors.redAccent[400],
+                  color: Colors.redAccent[400], // cor de fundo vermelha
                   child: Center(
-                    child: Icon(Icons.alarm, size: 40, color: Colors.white), // Ícone central.
+                    child: Icon(Icons.alarm, size: 40, color: Colors.white), // Ícone central com cor branca e tamanho 40.
                   ),
                 ),
               ),
             ],
           ),
         ),
+        // Quarta linha com fundo cinza e escrita em preto
         Row(
           children: [
             Expanded(
@@ -159,8 +160,8 @@ class Layout extends StatelessWidget {
                   child: Text(
                     'Engenharia de Software',
                     style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
+                      color: Colors.black, // Define a cor
+                      fontSize: 25, // Define o tamanho da letra 
                       fontStyle: FontStyle.italic, // Define o estilo como itálico.
                     ),
                   ),
