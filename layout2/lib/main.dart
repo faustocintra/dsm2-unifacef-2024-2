@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
                 'Igor Pereira Campos',
                 style: TextStyle(
                   fontSize: 30,
-                  fontWeight: FontWeight.bold, // Negrito
+                  fontWeight: FontWeight.bold, 
                   color: Colors.white,
                 ),
                 textAlign: TextAlign.center,
@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(16),
               child: Text(
-                'Data da Prova: 12/09/2024',
+                'Data da Prova: 19/09/2024',
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.deepOrange[300], // Laranja escuro tonalidade 300
+                  color: Colors.lime[200], // Verde Limão tonalidade 200
                 ),
                 textAlign: TextAlign.center, 
               ),
@@ -52,9 +52,9 @@ class MyApp extends StatelessWidget {
                       color: Colors.purple[400],
                       child: const Column(
                         children: [
-                          Icon(Icons.code, size: 50, color: Colors.black), // Ícone (superior)
+                          Icon(Icons.code, size: 50, color: Colors.white),
                           Spacer(), // Espaçamento entre os ícones
-                          Icon(Icons.bug_report, size: 50, color: Colors.black), // Ícone (inferior)
+                          Icon(Icons.bug_report, size: 50, color: Colors.white), 
                         ],
                       ),
                     ),
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
                     child: Container(
                       color: Colors.red[400],
                       child: const Center(
-                        child: Icon(Icons.access_alarm, size: 50, color: Colors.black), // Ícone de computador
+                        child: Icon(Icons.access_alarm, size: 50, color: Colors.white), 
                       ),
                     ),
                   ),
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
                     child: Container(
                       color: Colors.orange[400],
                       child: const Center(
-                        child: Icon(Icons.developer_mode, size: 50, color: Colors.black), // Ícone de desenvolvedor
+                        child: Icon(Icons.developer_mode, size: 50, color: Colors.white),
                       ),
                     ),
                   ),
@@ -82,23 +82,23 @@ class MyApp extends StatelessWidget {
                     child: Container(
                       color: Colors.teal[400],
                       child: const Center(
-                        child: Icon(Icons.computer, size: 50, color: Colors.black), // Ícone de memória
+                        child: Icon(Icons.computer, size: 50, color: Colors.white),
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-            // Última linha: Nome da turma
+            // Última linha
             Container(
-              color: Colors.blue[400], // Cor de fundo para a última linha
+              color: Colors.blue[400], // Cor de fundo
               alignment: Alignment.centerRight, // Alinhamento à direita
               padding: const EdgeInsets.all(16),
               child: const Text(
-                'Turma: Engenharia de Software',
+                'Curso: Engenharia de Software',
                 style: TextStyle(
                   fontSize: 25,
-                  fontStyle: FontStyle.italic, // itálico
+                  fontStyle: FontStyle.italic,
                   color: Colors.white,
                 ),
                 textAlign: TextAlign.right, // Alinhamento à direita
