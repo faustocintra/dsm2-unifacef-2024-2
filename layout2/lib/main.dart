@@ -37,14 +37,14 @@ class Layout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Primeira linha: Nome completo, centralizado
+        // Primeira linha - Nome completo, centralizado - Cor Azul
         Row(
           children: [
             Expanded(
-              child: Container(
-                color: Colors.purple[400],
+              child: Container( //child que controla toda a primeira linha
+                color: Colors.blue[400],
                 height: 150,
-                child: const Center(
+                child: const Center( //Child que controla a parte do nome
                   child: Text(
                     'Lucas Henrique Bizzi',
                     style: TextStyle(
@@ -59,18 +59,18 @@ class Layout extends StatelessWidget {
             ),
           ],
         ),
-        // Segunda linha: Data da prova, centralizado
+        // Segunda linha - Data da prova, centralizado - Cor rosa
         Row(
           children: [
             Expanded(
-              child: Container(
-                color: Colors.green[400],
+              child: Container(// child que controla a segunda linha
+                color: Colors.pink[400],
                 height: 150,
-                child: const Center(
+                child: const Center(//child que controla a parte da data
                   child: Text(
                     'Data da Prova: 19/09/2024',
                     style: TextStyle(
-                      color: Colors.orangeAccent,
+                      color: Colors.lime,
                       fontSize: 25,
                     ),
                     textAlign: TextAlign.center,
@@ -80,15 +80,22 @@ class Layout extends StatelessWidget {
             ),
           ],
         ),
-        // Terceira linha: Quatro colunas, sendo que uma possui dois ícones
+        // Terceira linha - Quatro colunas - Três linhas que possuem um ícone, e uma que possui dois ícones
         Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Primeira coluna com dois ícones (um no topo, outro no final)
+            children: [//children que controla toda a linha com as quatro colunas
+              // Primeira coluna - Um ícone na cor branca (casa) - Cinza
               Expanded(
-                child: Container(
-                  color: Colors.blue[400],
+                child: Container( //child primeira coluna
+                  color: Colors.grey[400],
+                  child: const Icon(Icons.home, size: 50, color: Colors.white),
+                ),
+              ),
+              // Segunda coluna - Dois ícones (um no topo, outro no final(estrela e coração)) - Amarelo
+              Expanded(
+                child: Container(//child segunda coluna
+                  color: Colors.yellow[400],
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
@@ -98,42 +105,35 @@ class Layout extends StatelessWidget {
                   ),
                 ),
               ),
-              // Segunda coluna com um ícone
-              Expanded(
+              // Terceira coluna - Um ícone - Azul
+              Expanded(//child terceira coluna
                 child: Container(
-                  color: Colors.amber[400],
-                  child: const Icon(Icons.home, size: 50, color: Colors.white),
+                  color: Colors.blue[400],
+                  child: const Icon(Icons.person, size: 50, color: Colors.white),
                 ),
               ),
-              // Terceira coluna com um ícone
-              Expanded(
-                child: Container(
-                  color: Colors.pink[400],
-                  child: const Icon(Icons.settings, size: 50, color: Colors.white),
-                ),
-              ),
-              // Quarta coluna com um ícone
-              Expanded(
+              // Quarta coluna - Um ícone - Verde
+              Expanded(//child quarta coluna
                 child: Container(
                   color: Colors.teal[400],
-                  child: const Icon(Icons.person, size: 50, color: Colors.white),
+                  child: const Icon(Icons.exit_to_app, size: 50, color: Colors.white),
                 ),
               ),
             ],
           ),
         ),
-        // Última linha: Nome da turma, alinhado à direita
+        // Última linha - Nome da turma, alinhado à direita - Vermelho
         Row(
-          children: [
+          children: [//children que controla a última linha
             Expanded(
               child: Container(
-                color: Colors.grey[400],
+                color: Colors.red[400],
                 height: 100,
                 alignment: Alignment.centerRight,
-                child: const Padding(
+                child: const Padding(//child que controla a parte do escrito turma
                   padding: EdgeInsets.all(16.0),
                   child: Text(
-                    'Turma 2024',
+                    'Eng. de Software - 6° Semestre de 2024',
                     style: TextStyle(
                       fontSize: 25,
                       fontStyle: FontStyle.italic,
