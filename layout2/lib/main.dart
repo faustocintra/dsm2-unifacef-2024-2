@@ -67,7 +67,8 @@ class Layout extends StatelessWidget {
                 '19/09/2024',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.deepOrange[300],
+                  //Alterando a cor para verde limao
+                  color: Colors.greenAccent[200],
                   fontSize: 25,
                 ),
               ),
@@ -81,32 +82,48 @@ class Layout extends StatelessWidget {
             Expanded(
                 child: Container(
               color: Colors.blue[400],
-              child: const Icon(Icons.home),
+              child: const Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
             )),
             Expanded(
                 child: Container(
               color: Colors.amber[400],
-              child: const Icon(Icons.history),
+              child: const Icon(
+                //Para trocar a cor dos icones, adicionei a propriedade color apos o icone
+                Icons.history,
+                color: Colors.white,
+              ),
             )),
             Expanded(
                 child: Container(
               color: Colors.pink[400],
-              //Adicionei um padding para que os icones nao ficassem colados na borda
-              padding: const EdgeInsets.all(16),
-              //Como essa coluna terá 2 ícones, adicionei uma column pra isso
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(Icons.more),
-                  Icon(Icons.share),
-                ],
+              child: const Icon(
+                Icons.open_in_browser,
+                color: Colors.white,
               ),
             )),
             //Adicionando a quarta coluna
             Expanded(
                 child: Container(
               color: Colors.blueGrey[400],
-              child: const Icon(Icons.open_in_browser),
+              //Adicionei um padding para que os icones nao ficassem colados na borda
+              padding: const EdgeInsets.all(16),
+              //Como essa coluna terá 2 ícones, adicionei uma column pra isso
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    Icons.more,
+                    color: Colors.white,
+                  ),
+                  Icon(
+                    Icons.share,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
             )),
           ],
         )),
@@ -116,7 +133,7 @@ class Layout extends StatelessWidget {
             Expanded(
                 child: Container(
               color: Colors.orange[400],
-              height: 100,
+              height: 80,
               //Texto com o nome do curso
               child: const Text(
                 'Engenharia de Software',
