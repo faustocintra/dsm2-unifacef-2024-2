@@ -1,9 +1,11 @@
+// Pedro Paulino Martiniano 25784
 import 'package:flutter/material.dart';
 
+// função main para rodar aplicação carrendo widget
 void main() {
   runApp(const MyApp());
 }
-
+// classe da applicação
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Prova 1 - Pedro Paulino'),
     );
   }
 }
@@ -30,9 +32,10 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+// layoult da aplicação
 class Layout extends StatelessWidget {
   const Layout({super.key});
-
+  // retorno de widget 
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -66,12 +69,13 @@ class Layout extends StatelessWidget {
               child: Container(
                 color: Colors.green[400],
                 height: 150,
-                child: const Center(
+                child: Center(
                   child: Text(
                     // data da prova
                     '19/09/2024',
                     style: TextStyle(
-                      color: Colors.deepOrange,
+                      // cor verde limão com tonalidade 200
+                      color: Colors.lime[200],
                       fontSize: 20
                     ),
                   ),
@@ -94,7 +98,7 @@ class Layout extends StatelessWidget {
               Align(
                 alignment: Alignment.topCenter,
                 child: Icon(
-                  Icons.star,  // Ícone superior
+                  Icons.star,  // Ícone superior branco
                   color: Colors.white,
                   size: 40,
                 ),
@@ -103,7 +107,7 @@ class Layout extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Icon(
-                  Icons.favorite,  // Ícone inferior
+                  Icons.favorite,  // Ícone inferior branco
                   color: Colors.white,
                   size: 40,
                 ),
@@ -118,7 +122,7 @@ class Layout extends StatelessWidget {
           color: Colors.amber[400],
           child: const Center(
             child: Icon(
-              Icons.home,  // Ícone central
+              Icons.home,  // Ícone central branco
               color: Colors.white,
               size: 40,
             ),
@@ -131,7 +135,7 @@ class Layout extends StatelessWidget {
           color: Colors.pink[400],
           child: const Center(
             child: Icon(
-              Icons.school,  // Ícone central
+              Icons.school,  // Ícone central branco
               color: Colors.white,
               size: 40,
             ),
@@ -144,7 +148,7 @@ class Layout extends StatelessWidget {
           color: Colors.red[400],
           child: const Center(
             child: Icon(
-              Icons.settings,  // Ícone central
+              Icons.settings,  // Ícone central branco
               color: Colors.white,
               size: 40,
             ),
