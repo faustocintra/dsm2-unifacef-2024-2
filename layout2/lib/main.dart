@@ -60,7 +60,7 @@ class Layout extends StatelessWidget {
                   child: Text(
                     'Data da Prova: 19/09/2024', //data da prova
                     style: TextStyle(
-                      color: Colors.orange, 
+                      color: Colors.lime[200], //cor alterada para verde limao na tonalidade 200, conforme as instruções
                       fontSize: 20,
                     ),
                   ),
