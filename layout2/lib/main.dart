@@ -10,14 +10,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Exercício de Layout',
       home: Scaffold(
-        backgroundColor: Colors.grey[400], // Fundo da tela
+        backgroundColor: Colors.black, // Fundo da tela
         appBar: AppBar(
           title: const Text('Exercício de Layout'),
         ),
         body: Column(
           children: [
             Container(
-              color: Colors.red[400],
+              color: Colors.lightBlue[200],
               alignment: Alignment.center,
               padding: const EdgeInsets.all(16),
               child: const Text(
@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(16),
               child: Text(
-                'Data da Prova: 12/09/2024',
+                'Data da Prova: 19/09/2024',
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.deepOrange[300], // Laranja escuro tonalidade 300
+                  color: Colors.lightGreen[200], // Laranja escuro tonalidade 300
                 ),
                 textAlign: TextAlign.center, 
               ),
@@ -52,9 +52,9 @@ class MyApp extends StatelessWidget {
                       color: Colors.purple[400],
                       child: const Column(
                         children: [
-                          Icon(Icons.code, size: 50, color: Colors.black), // Ícone (superior)
+                          Icon(Icons.code, size: 50, color: Colors.white), // Ícone (superior)
                           Spacer(), // Espaçamento entre os ícones
-                          Icon(Icons.bug_report, size: 50, color: Colors.black), // Ícone (inferior)
+                          Icon(Icons.bug_report, size: 50, color: Colors.white), // Ícone (inferior)
                         ],
                       ),
                     ),
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
                     child: Container(
                       color: Colors.teal[400],
                       child: const Center(
-                        child: Icon(Icons.computer, size: 50, color: Colors.black), // Ícone de computador
+                        child: Icon(Icons.computer, size: 50, color: Colors.white), // Ícone de computador
                       ),
                     ),
                   ),
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
                     child: Container(
                       color: Colors.orange[400],
                       child: const Center(
-                        child: Icon(Icons.developer_mode, size: 50, color: Colors.black), // Ícone de desenvolvedor
+                        child: Icon(Icons.developer_mode, size: 50, color: Colors.white), // Ícone de desenvolvedor
                       ),
                     ),
                   ),
@@ -82,7 +82,7 @@ class MyApp extends StatelessWidget {
                     child: Container(
                       color: Colors.green[400],
                       child: const Center(
-                        child: Icon(Icons.memory, size: 50, color: Colors.black), // Ícone de memória
+                        child: Icon(Icons.memory, size: 50, color: Colors.white), // Ícone de memória
                       ),
                     ),
                   ),
