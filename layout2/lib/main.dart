@@ -8,6 +8,33 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key, required this.title});
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Layout());
+  }
+}
+
+class Layout extends StatelessWidget {
+  const Layout({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         // Primeira linha: Nome completo
@@ -33,7 +60,7 @@ class MyApp extends StatelessWidget {
           ],
         ),
         // Segunda linha: Data da prova
-          Row(
+        Row(
           children: [
             Expanded(
               child: Container(
@@ -52,15 +79,70 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-      ],
+          ],
         ),
-        // Última linha (placeholder por enquanto)
+        // Terceira linha com 4 colunas
+        Expanded(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Coluna 1: Dois ícones (superior e inferior)
+              Expanded(
+                child: Column(
+                  children: [
+                    const Icon(Icons.star, size: 50, color: Colors.red),
+                    const Spacer(),
+                    const Icon(Icons.favorite, size: 50, color: Colors.blue),
+                  ],
+                ),
+              ),
+              // Coluna 2: Um ícone
+              Expanded(
+                child: Container(
+                  color: Colors.blue[400],
+                  child: const Icon(Icons.access_alarm,
+                      size: 50, color: Colors.white),
+                ),
+              ),
+              // Coluna 3: Um ícone
+              Expanded(
+                child: Container(
+                  color: Colors.amber[400],
+                  child: const Icon(Icons.home, size: 50, color: Colors.white),
+                ),
+              ),
+              // Coluna 4: Um ícone
+              Expanded(
+                child: Container(
+                  color: Colors.pink[400],
+                  child:
+                      const Icon(Icons.settings, size: 50, color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+        ),
+        // Última linha: Nome da turma
         Row(
           children: [
             Expanded(
               child: Container(
                 color: Colors.orange[400],
                 height: 100,
+                child: const Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 16.0),
+                    child: Text(
+                      'Sistemas de Informação',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 25,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
