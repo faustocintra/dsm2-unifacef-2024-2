@@ -72,9 +72,9 @@ class Layout extends StatelessWidget {
                 height: 150,
                 child: const Center(
                   child: Text(
-                    'Data da Prova: 19/09/2024',
+                    'Data da Prova: 19/09/2024', // Data atualizada
                     style: TextStyle(
-                      color: Colors.deepOrange, // Cor laranja escuro
+                      color: Color(0xFF00FF85), // Cor verde limão tonalidade 200
                       fontSize: 25,
                     ),
                     textAlign: TextAlign.center, // Centralizado
@@ -95,9 +95,9 @@ class Layout extends StatelessWidget {
                   color: Colors.red[400], // Cor de fundo da coluna
                   child: Column(
                     children: const [
-                      Icon(Icons.favorite, size: 50, color: Colors.white), // Ícone superior
+                      Icon(Icons.favorite, size: 50, color: Colors.white), // Ícone superior (branco)
                       Spacer(), // Espaço entre ícones
-                      Icon(Icons.star, size: 50, color: Colors.white), // Ícone inferior
+                      Icon(Icons.star, size: 50, color: Colors.white), // Ícone inferior (branco)
                     ],
                   ),
                 ),
@@ -107,7 +107,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.blue[400], // Cor de fundo da coluna
                   child: const Center(
-                    child: Icon(Icons.access_alarm, size: 50, color: Colors.white),
+                    child: Icon(Icons.access_alarm, size: 50, color: Colors.white), // Ícone branco
                   ),
                 ),
               ),
@@ -116,7 +116,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.green[400], // Cor de fundo da coluna
                   child: const Center(
-                    child: Icon(Icons.cake, size: 50, color: Colors.white),
+                    child: Icon(Icons.cake, size: 50, color: Colors.white), // Ícone branco
                   ),
                 ),
               ),
@@ -125,7 +125,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.yellow[400], // Cor de fundo da coluna
                   child: const Center(
-                    child: Icon(Icons.email, size: 50, color: Colors.white),
+                    child: Icon(Icons.email, size: 50, color: Colors.white), // Ícone branco
                   ),
                 ),
               ),
