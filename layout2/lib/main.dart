@@ -38,7 +38,7 @@ class Layout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //  Adicionando a primeira linha com nome
+        // Primeira linha com nome
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -58,7 +58,6 @@ class Layout extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 0), 
           ],
         ),
         // Segunda linha com data da prova
@@ -67,14 +66,14 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                color: Colors.green[400],
+                color: Colors.lime[200], // cor verde limão tonalidade 200
                 height: 150,
                 child: const Center(
-                  child: Text( // data da prova
+                  child: Text(
                     '19/09/2024',
                     style: TextStyle(
-                      color: Colors.deepOrangeAccent, // cor laranja escuro com tom 500
-                      fontSize: 24, // fonte tamanho 24
+                      color: Colors.white, // cor branca no texto
+                      fontSize: 24, // tamanho da fonte 24
                     ),
                   ),
                 ),
@@ -91,21 +90,21 @@ class Layout extends StatelessWidget {
               Expanded(
                 child: Container(
                   color: Colors.blue[400],
-                  child: const Icon(Icons.star, size: 50, color: Colors.white),
+                  child: const Icon(Icons.star, size: 50, color: Colors.white), // ícone na cor branca
                 ),
               ),
               // Segunda coluna com um ícone
               Expanded(
                 child: Container(
                   color: Colors.amber[400],
-                  child: const Icon(Icons.home, size: 50, color: Colors.white),
+                  child: const Icon(Icons.home, size: 50, color: Colors.white), // ícone na cor branca
                 ),
               ),
               // Terceira coluna com um ícone
               Expanded(
                 child: Container(
                   color: Colors.yellow[400],
-                  child: const Icon(Icons.audiotrack, size: 50, color: Colors.white),
+                  child: const Icon(Icons.audiotrack, size: 50, color: Colors.white), // ícone na cor branca
                 ),
               ),
               // Quarta coluna com dois ícones
@@ -115,8 +114,8 @@ class Layout extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
-                      Icon(Icons.home, size: 50, color: Colors.white),
-                      Icon(Icons.settings, size: 50, color: Colors.white),
+                      Icon(Icons.home, size: 50, color: Colors.white), // ícone na cor branca
+                      Icon(Icons.settings, size: 50, color: Colors.white), // ícone na cor branca
                     ],
                   ),
                 ),
@@ -130,11 +129,11 @@ class Layout extends StatelessWidget {
           height: 100,
           child: const Align(
             alignment: Alignment.centerRight,
-            child: Text( // Adicionando o nome da turma
-              '6º Semestre', 
+            child: Text( 
+              '6º Semestre', // nome da turma
               style: TextStyle(
-                fontStyle: FontStyle.italic, // italico
-                fontSize: 25, // fonte 25
+                fontStyle: FontStyle.italic, // estilo itálico
+                fontSize: 25, // fonte tamanho 25
               ),
             ),
           ),
