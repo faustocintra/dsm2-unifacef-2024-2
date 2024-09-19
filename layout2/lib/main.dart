@@ -76,7 +76,9 @@ class Layout extends StatelessWidget {
                   child: Text(
                     '19 de Setembro de 2024',
                     style: TextStyle(
-                      color: Colors.orange[300],
+                      //Alteração do trabalho para a prova 1
+                      //color: Colors.lime[300]
+                      color: Colors.lime[200],
                       fontSize: 30,
                     ),
                     textAlign: TextAlign.center,
@@ -97,10 +99,22 @@ class Layout extends StatelessWidget {
                   child: Column(
                     //Faz com que os 2 ícones se espaçem igualmente, nesse caso, assim um fica em cima, o outro embaixo devido a declaração de coluna
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
+                    //Alteração do trabalho para a prova 2
+                    //Utilização de "children" ao invés de "child" por serem multiplos elementos filho
+                    //children: [
                      //Utilizando o recurso 'Icons' do Dart 
-                      Icon(Icons.star),
-                      Icon(Icons.favorite), 
+                      //Icon(Icons.star),
+                      //Icon(Icons.favorite), 
+                    //],
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.white,
+                      ),
+                      Icon(
+                        Icons.favorite,
+                        color: Colors.white,
+                      ),
                     ],
                   ),
                 )
@@ -109,28 +123,44 @@ class Layout extends StatelessWidget {
               Expanded(
                 child: Container(
                   color: Colors.amber[400],
-                  child: Center(
-                    child: Icon(Icons.home),
-                  )
+                  //Alteração do trabalho para a prova 2
+                  //child: Center(
+                    //child: Icon(Icons.home),
+                  //)
+                  child: Icon(
+                      Icons.home,
+                      color: Colors.white,
+                  ),
                 )
               ),
               //Coluna 3
               Expanded(
                 child: Container(
                   color: Colors.pink[400],
-                  child: Center(
-                    child: Icon(Icons.settings),
-                  )
+                  //Alteração do trabalho para a prova 2
+                  //child: Center(
+                    //child: Icon(Icons.settings),
+                  //)
+                  child: Icon(
+                      Icons.settings,
+                      color: Colors.white,
+                  ),
                 )
               ),
               //Coluna 4
               Expanded(
                 child: Container(
                   color: Colors.red[400],
-                  child: Center(
-                    child: Icon(Icons.person),
-                  )
+                  //Alteração do trabalho para a prova 2
+                  //child: Center(
+                    //child: Icon(Icons.settings),
+                  //)
+                  child: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                  ),
                 )
+                //Removi o "child: Center() pois durante a execução do trabalho pré-prova não sabia que o mesmo não era necessário, descobri durante os estudos para a prova, que apenas Child: Icon() já era suficiente para centralizar"
               ),
             ],
           ),
