@@ -60,9 +60,9 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
                 child: Container(
-              color: Colors.green[400],
+              color: Colors.grey[400],
               height: 150,
-              //Adicionei o child nesse Expanded para criar o texto com a data
+              //Adicionei o child nesse Expanded para colocar o texto com a data
               child: Text(
                 '19/09/2024',
                 textAlign: TextAlign.center,
@@ -81,41 +81,42 @@ class Layout extends StatelessWidget {
             Expanded(
                 child: Container(
               color: Colors.blue[400],
-              child: const Icon(Icons.home),
+              child: const Icon(Icons.home,
+                                color: Colors.white, ),
             )),
             Expanded(
                 child: Container(
               color: Colors.amber[400],
-              child: const Icon(Icons.history),
+              child: const Icon(Icons.laptop, color: Colors.white, ),
             )),
             Expanded(
                 child: Container(
               color: Colors.pink[400],
-              //Adicionei um padding para que os icones nao ficassem colados na borda
+              //Adicionei esse padding para evitar que icones nao ficassem colados na borda
               padding: const EdgeInsets.all(16),
-              //Como essa coluna terá 2 ícones, adicionei uma column pra isso
+              //essa coluna terá 2 ícones
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.more),
-                  Icon(Icons.share),
+                  Icon(Icons.attach_money, color: Colors.white, ),
+                  Icon(Icons.navigation, color: Colors.white,),
                 ],
               ),
             )),
-            //Adicionando a quarta coluna
+            // a quarta coluna
             Expanded(
                 child: Container(
               color: Colors.blueGrey[400],
-              child: const Icon(Icons.open_in_browser),
+              child: const Icon(Icons.person, color: Colors.white,),
             )),
           ],
         )),
-        //Adicionando a ultima linha solicitada
+        // ultima linha
         Row(
           children: [
             Expanded(
                 child: Container(
-              color: Colors.orange[400],
+              color: Colors.red[400],
               height: 100,
               //Texto com o nome do curso
               child: const Text(
