@@ -69,7 +69,7 @@ class Layout extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30, // define o tamanho do texto
                     fontWeight: FontWeight.bold, 
-                    color: Color(0xFFEF6C00),  
+                    color: Colors.lime[200], // Lembro de ter lido na documentação do flutter sobre isso testei da forma que lembrava
                   ),
                 ),
               ),
@@ -84,7 +84,7 @@ class Layout extends StatelessWidget {
               child: Container(
                 color: Colors.blue[400], 
                 child: Center(
-                  child: Icon(Icons.search, size: 30)
+                  child: Icon(Icons.search, size: 30, color:Colors.white), // Lembro de ter lido na documentação do flutter sobre isso testei da forma que lembrava
                 ),
               ),
             ),
@@ -92,7 +92,7 @@ class Layout extends StatelessWidget {
               child: Container(
                 color: Colors.amber[400], 
                 child: Center(
-                  child: Icon(Icons.person, size: 30),
+                  child: Icon(Icons.person, size: 30, color:Colors.white), // Lembro de ter lido na documentação do flutter sobre isso testei da forma que lembrava
                 ),
               ),
             ),
@@ -100,7 +100,7 @@ class Layout extends StatelessWidget {
               child: Container(
                 color: Colors.pink[400], 
                 child: Center(
-                  child: Icon(Icons.notifications, size: 30),
+                  child: Icon(Icons.notifications, size: 30, color:Colors.white), // Lembro de ter lido na documentação do flutter sobre isso testei da forma que lembrava
                 ),
               ),
             ),
@@ -110,9 +110,9 @@ class Layout extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.settings, size: 30),
+                    Icon(Icons.settings, size: 30, color:Colors.white), // Lembro de ter lido na documentação do flutter sobre isso testei da forma que lembrava
                     SizedBox(height: 20.0), 
-                    Icon(Icons.menu, size: 30),
+                    Icon(Icons.menu, size: 30, color:Colors.white), // Lembro de ter lido na documentação do flutter sobre isso testei da forma que lembrava
                   ],
                 ),
               ),
