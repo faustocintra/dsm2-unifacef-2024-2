@@ -6,7 +6,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -66,13 +66,13 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                color: Colors.lime[200], // cor verde limão tonalidade 200
+                color: Colors.grey[900], // cor de fundo escura para contraste
                 height: 150,
                 child: const Center(
                   child: Text(
                     '19/09/2024',
                     style: TextStyle(
-                      color: Colors.white, // cor branca no texto
+                      color: Color(0xFFE6FF00), // cor verde limão tonalidade 200
                       fontSize: 24, // tamanho da fonte 24
                     ),
                   ),
@@ -129,7 +129,7 @@ class Layout extends StatelessWidget {
           height: 100,
           child: const Align(
             alignment: Alignment.centerRight,
-            child: Text( 
+            child: Text(
               '6º Semestre', // nome da turma
               style: TextStyle(
                 fontStyle: FontStyle.italic, // estilo itálico
