@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); // Ponto de entrada do aplicativo, que inicializa o app Flutter.
 }
 
 class MyApp extends StatelessWidget {
@@ -9,14 +9,15 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    // MaterialApp define a estrutura principal da aplicação, com tema e a página inicial.
     return MaterialApp(
       title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, // Remove a marca de debug no canto superior direito.
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), // Define o esquema de cores do tema.
+        useMaterial3: true, // Ativa o uso do Material Design 3.
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'), // Define a página inicial.
     );
   }
 }
@@ -27,7 +28,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Layout());
+    // Scaffold organiza a estrutura da tela, com possibilidade de usar AppBar, Body, etc.
+    return const Scaffold(body: Layout()); // O corpo da página chama o widget Layout.
   }
 }
 
@@ -36,45 +38,45 @@ class Layout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Column organiza os widgets verticalmente (um abaixo do outro).
     return Column(
       children: [
-        //  Adicionando a primeira linha com nome
+        // Primeira linha - exibe o nome do estudante.
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center, // Centraliza o conteúdo da linha.
           children: [
             Expanded(
               child: Container(
-                color: Colors.purple[400],
-                height: 150,
+                color: Colors.purple[400], // Define a cor de fundo roxa para o container.
+                height: 150, // Define a altura da caixa.
                 child: const Center(
                   child: Text(
-                    'Vitor Hugo de Oliveira',
+                    'Vitor Hugo de Oliveira', // Nome exibido no centro da primeira linha.
                     style: TextStyle(
-                      color: Colors.white, // cor branca na fonte
-                      fontSize: 30, // tamanho 30 da fonte
-                      fontWeight: FontWeight.bold, // negrito
+                      color: Colors.white, // Cor do texto branca.
+                      fontSize: 30, // Tamanho da fonte 30.
+                      fontWeight: FontWeight.bold, // Define o texto como negrito.
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(width: 0), 
           ],
         ),
-        // Segunda linha com data da prova
+        // Segunda linha - exibe a data atualizada da prova.
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center, // Centraliza o conteúdo da linha.
           children: [
             Expanded(
               child: Container(
-                color: Colors.green[400],
-                height: 150,
+                color: Colors.green[400], // Cor de fundo verde.
+                height: 150, // Define a altura da caixa.
                 child: const Center(
-                  child: Text( // data da prova
-                    '19/09/2024',
+                  child: Text(
+                    '20/09/2024', // Data da prova atualizada.
                     style: TextStyle(
-                      color: Colors.deepOrangeAccent, // cor laranja escuro com tom 500
-                      fontSize: 24, // fonte tamanho 24
+                      color: Colors.limeAccent, // Cor do texto alterada para verde limão (tonalidade 200).
+                      fontSize: 24, // Tamanho da fonte 24.
                     ),
                   ),
                 ),
@@ -82,41 +84,41 @@ class Layout extends StatelessWidget {
             ),
           ],
         ),
-        // Terceira linha com ícones
+        // Terceira linha - exibe ícones com diferentes cores de fundo.
         Expanded(
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.stretch, // Faz com que os ícones preencham toda a altura disponível.
             children: [
-              // Primeira coluna com um ícone
+              // Primeira coluna com ícone de estrela.
               Expanded(
                 child: Container(
-                  color: Colors.blue[400],
-                  child: const Icon(Icons.star, size: 50, color: Colors.white),
+                  color: Colors.blue[400], // Cor de fundo azul.
+                  child: const Icon(Icons.star, size: 50, color: Colors.white), // Ícone estrela na cor branca.
                 ),
               ),
-              // Segunda coluna com um ícone
+              // Segunda coluna com ícone de coração.
               Expanded(
                 child: Container(
-                  color: Colors.amber[400],
-                  child: const Icon(Icons.favorite, size: 50, color: Colors.white),
+                  color: Colors.amber[400], // Cor de fundo amarelo.
+                  child: const Icon(Icons.favorite, size: 50, color: Colors.white), // Ícone de coração na cor branca.
                 ),
               ),
-              // Terceira coluna com um ícone
+              // Terceira coluna com ícone de música.
               Expanded(
                 child: Container(
-                  color: Colors.red[400],
-                  child: const Icon(Icons.audiotrack, size: 50, color: Colors.white),
+                  color: Colors.red[400], // Cor de fundo vermelho.
+                  child: const Icon(Icons.audiotrack, size: 50, color: Colors.white), // Ícone de música na cor branca.
                 ),
               ),
-              // Quarta coluna com dois ícones
+              // Quarta coluna com dois ícones: casa e configurações.
               Expanded(
                 child: Container(
-                  color: Colors.pink[400],
+                  color: Colors.pink[400], // Cor de fundo rosa.
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween, // Distribui os ícones com espaço entre eles.
                     children: const [
-                      Icon(Icons.home, size: 50, color: Colors.white),
-                      Icon(Icons.settings, size: 50, color: Colors.white),
+                      Icon(Icons.home, size: 50, color: Colors.white), // Ícone de casa na cor branca.
+                      Icon(Icons.settings, size: 50, color: Colors.white), // Ícone de configurações na cor branca.
                     ],
                   ),
                 ),
@@ -124,22 +126,22 @@ class Layout extends StatelessWidget {
             ],
           ),
         ),
-        // Quarta linha com nome da turma
+        // Quarta linha - exibe o nome da turma no canto inferior direito.
         Container(
-          color: Colors.grey[300],
-          height: 100,
+          color: Colors.grey[300], // Cor de fundo cinza claro.
+          height: 100, // Define a altura do container.
           child: const Align(
-            alignment: Alignment.centerRight,
-            child: Text( // Adicionando o nome da turma
-              '6º Semestre', 
+            alignment: Alignment.centerRight, // Alinha o texto à direita.
+            child: Text(
+              '6º Semestre', // Texto que exibe o nome da turma.
               style: TextStyle(
-                fontStyle: FontStyle.italic, // italico
-                fontSize: 25, // fonte 25
+                fontStyle: FontStyle.italic, // Define o estilo do texto como itálico.
+                fontSize: 25, // Define o tamanho da fonte como 25.
               ),
             ),
           ),
         ),
-      ],
-    );
-  }
+      ],
+    );
+  }
 }
