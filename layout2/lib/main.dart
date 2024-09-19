@@ -67,7 +67,7 @@ class Layout extends StatelessWidget {
                 '19/09/2024',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.deepOrange[300],
+                  color: Colors.lime[200],
                   fontSize: 25,
                 ),
               ),
