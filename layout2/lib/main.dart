@@ -65,11 +65,11 @@ class Layout extends StatelessWidget {
               child: Container(
                 color: Colors.blue[400],
                 height: 150,
-                child: const Center(
+                child: Center(
                   child: Text(
                     '19/09/2024',
                     style: TextStyle(
-                      color: Colors.orangeAccent,
+                      color: Colors.greenAccent[200],
                       fontSize: 30,
                     ),
                   ),
@@ -89,9 +89,9 @@ class Layout extends StatelessWidget {
                   color: Colors.purple[400],
                   child: const Column(
                     children: [
-                      Icon(Icons.home, size: 50),
+                      Icon(Icons.home, size: 50, color: Colors.white,),
                       Spacer(),
-                      Icon(Icons.settings, size: 50),
+                      Icon(Icons.settings, size: 50, color: Colors.white,),
                     ],
                   ),
                 ),
@@ -101,7 +101,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.pink[400],
                   child: const Center(
-                    child: Icon(Icons.phone, size: 50),
+                    child: Icon(Icons.phone, size: 50, color: Colors.white,),
                   ),
                 ),
               ),
@@ -110,7 +110,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.green[400],
                   child: const Center(
-                    child: Icon(Icons.camera, size: 50),
+                    child: Icon(Icons.camera, size: 50, color: Colors.white,),
                   ),
                 ),
               ),
@@ -119,7 +119,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.red[400],
                   child: const Center(
-                    child: Icon(Icons.email, size: 50),
+                    child: Icon(Icons.email, size: 50, color: Colors.white,),
                   ),
                 ),
               ),
