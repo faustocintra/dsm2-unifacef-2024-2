@@ -81,23 +81,34 @@ class Layout extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                color: Colors.blue[400]
+                color: Colors.blue[400],
+                child: Icon(Icons.all_out,size: 40),
                )
               
             ),
             Expanded(
               child: Container(
-                color: Colors.amber[400]
+                color: Colors.amber[400],
+                child: Column(
+                mainAxisAlignment: MainAxisAlignment.center, // Centraliza os ícones verticalmente
+                children: [
+                  Icon(Icons.star,size: 40), // Primeiro ícone
+                  SizedBox(height: 100),
+                  Icon(Icons.favorite_border,size: 40), // Segundo ícone
+                ],
+             ),
               )
             ),
             Expanded(
               child: Container(
-                color: Colors.pink[400]
+                color: Colors.pink[400],
+                child: Icon(Icons.air,size: 40),
               )
             ),
             Expanded(
               child: Container(
-                color: Colors.lime[400]
+                color: Colors.lime[400],
+                child: Icon(Icons.monitor,size: 40),
               )
             ),
           ],
@@ -108,7 +119,23 @@ class Layout extends StatelessWidget {
                 child: Container(
               color: Colors.brown[400],
               height: 150,
-            ))
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text('Engenharia de software',
+                    style: TextStyle(
+                    fontSize: 25.0,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white, ),
+                    
+                  ),
+                  ],
+                ),
+
+                )
+              ),
+            )
           ],
         ),
       ],
