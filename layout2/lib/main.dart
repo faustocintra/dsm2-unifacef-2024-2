@@ -103,7 +103,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.amber[400],
                   child: const Center(
-                    child: Icon(Icons.favorite, size: 50, color: Colors.white), // Ícone branco
+                    child: Icon(Icons.favorite, size: 50, color: Colors.white), // Troquei o Ícone para branco
                   ),
                 ),
               ),
@@ -111,7 +111,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.pink[400],
                   child: const Center(
-                    child: Icon(Icons.settings, size: 50, color: Colors.white), // Ícone branco
+                    child: Icon(Icons.settings, size: 50, color: Colors.white), // Troquei o Ícone para branco
                   ),
                 ),
               ),
@@ -119,7 +119,7 @@ class Layout extends StatelessWidget {
                 child: Container(
                   color: Colors.teal[400], // Nova cor adicionada (tonalidade 400)
                   child: const Center(
-                    child: Icon(Icons.person, size: 50, color: Colors.white), // Ícone branco
+                    child: Icon(Icons.person, size: 50, color: Colors.white), // Troquei o Ícone para branco
                   ),
                 ),
               ),
