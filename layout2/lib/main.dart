@@ -70,7 +70,7 @@ class Layout extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30, // define o tamanho do texto
                     fontWeight: FontWeight.bold, // Aplica o estilo de negrito
-                    color: Color(0xFFE65100), // Altera a cor da fonte 
+                    color: Colors.lime[200], // Para alterar a cor da data para verde limão, imaginei que poderia ter uma cor chamada lime, sendo assim testei e consegui aplicar a cor conforme solicitado na prova
                   ),
                 ),
               ),
@@ -87,7 +87,7 @@ class Layout extends StatelessWidget {
               child: Container(
                 color: Colors.blue[400], // define a cor da coluna
                 child: Center(
-                  child: Icon(Icons.home, size: 30) // Exibe o icone com tamanho 30
+                  child: Icon(Icons.home, size: 30, color:Colors.white) // levando em consideração que o size estava sendo definido em sequência imaginei que a cor poderia seguir a mesma logica, apliquei e funcinou
                 ),
               ),
             ),
@@ -96,7 +96,7 @@ class Layout extends StatelessWidget {
               child: Container(
                 color: Colors.amber[400], // define a cor da coluna
                 child: Center(
-                  child: Icon(Icons.account_circle, size: 30), // Exibe o icone com tamanho 30
+                  child: Icon(Icons.account_circle, size: 30, color:Colors.white), // levando em consideração que o size estava sendo definido em sequência imaginei que a cor poderia seguir a mesma logica, apliquei e funcinou
                 ),
               ),
             ),
@@ -105,7 +105,7 @@ class Layout extends StatelessWidget {
               child: Container(
                 color: Colors.pink[400], // define a cor da coluna
                 child: Center(
-                  child: Icon(Icons.menu, size: 30), // Exibe o icone com tamanho 30
+                  child: Icon(Icons.menu, size: 30, color:Colors.white), // levando em consideração que o size estava sendo definido em sequência imaginei que a cor poderia seguir a mesma logica, apliquei e funcinou
                 ),
               ),
             ),
@@ -116,9 +116,9 @@ class Layout extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.settings, size: 30), // Exibe o icone com tamanho 30
+                    Icon(Icons.settings, size: 30, color:Colors.white), // levando em consideração que o size estava sendo definido em sequência imaginei que a cor poderia seguir a mesma logica, apliquei e funcinou
                     SizedBox(height: 20.0), // Adiciona o espaçamento entre os icones
-                    Icon(Icons.notifications, size: 30), // Exibe o icone com tamanho 30
+                    Icon(Icons.notifications, size: 30, color:Colors.white), // levando em consideração que o size estava sendo definido em sequência imaginei que a cor poderia seguir a mesma logica, apliquei e funcinou
                   ],
                 ),
               ),
