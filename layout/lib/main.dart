@@ -93,6 +93,7 @@ class Stacked extends StatelessWidget {//classe utilizada para empilhar os compo
       alignment: Alignment.center, 
       children:[
         LightBlueBox(),
+        LightBlueBox(),
         IndigoBox(),
         Logo()
       ],);
@@ -119,7 +120,7 @@ class InfoPanel extends StatelessWidget {
                           color: Colors.indigo.shade600,
                           fontSize: 30,
                           fontWeight: FontWeight.bold)),
-                  const Text("Desenvolvido por Lucas H. Bizzi",
+                  const Text("Desenvolvido por mim",
                       textAlign: TextAlign.right,
                       style:
                           TextStyle(fontStyle: FontStyle.italic, fontSize: 16))
