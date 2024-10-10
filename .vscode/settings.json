@@ -1,3 +1,154 @@
 {
-    "editor.fontFamily": "monospace"
-}
+    "[dart]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.rulers": [
+        80
+      ],
+      "editor.selectionHighlight": false,
+      "editor.suggest.snippetsPreventQuickSuggestions": false,
+      "editor.suggestSelection": "first",
+      "editor.tabCompletion": "onlySnippets",
+      "editor.wordBasedSuggestions": "off"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+      "editor.tabSize": 4
+    },
+    "editor.semanticHighlighting.enabled": true,
+    "dart.showInspectorNotificationsForWidgetErrors": false,
+    "debug.console.fontFamily": "'Cascadia Code'",
+    "debug.toolBarLocation": "commandCenter",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.fontFamily": "'IBM Plex Mono', 'JetBrainsMono NF', 'Cascadia Code', Monolisa, 'Rec Mono Codex', 'Source Code Pro', 'Spline Sans Mono', 'Clincher Code', 'Monolisa', 'Ubuntu Sans Mono', Legetur, 'IBM Plex Mono', Consolas, monospace",
+    "editor.fontSize": 17,
+    "editor.fontVariations": false,
+    "editor.fontWeight": 500,
+    "editor.guides.bracketPairs": true,
+    "editor.indentSize": "tabSize",
+    "editor.inlineSuggest.enabled": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "editor.letterSpacing": -0.5,
+    "editor.lineHeight": 1.12,
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "editor.parameterHints.enabled": false,
+    "editor.quickSuggestions": {
+      "other": "off"
+    },
+    "editor.renderControlCharacters": false,
+    "editor.smoothScrolling": true,
+    "editor.suggest.preview": false,
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 2,
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "variable.other.property.js",
+            "entity.other.attribute-name.html",
+            "entity.other.attribute-name.js.jsx",
+            "variable.parameter",
+            "string.quoted.docstring.multi.python"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ],
+      "[Monospace Light]": {
+         "textMateRules": [
+          {
+            "scope": [
+              "entity.name.tag.js.jsx",
+              "meta.tag.js.jsx",
+              "meta.tag.without-attributes.js.jsx"
+            ],
+            "settings": {
+              "foreground": "#D07826"
+            }
+          },
+          {
+            "scope": [
+              "meta.jsx.children.js.jsx"
+            ],
+            "settings": {
+              "foreground": "#000000"
+            }
+          },
+      ], 
+      }
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "files.autoSave": "onFocusChange",
+    "html.format.enable": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "launch": {
+      "compounds": [],
+      "configurations": []
+    },
+    "scm.inputFontFamily": "editor",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontWeight": 500,
+    "terminal.integrated.letterSpacing": -0.5,
+    "terminal.integrated.profiles.windows": {
+      "Command Prompt": {
+        "args": [],
+        "icon": "terminal-cmd",
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ]
+      },
+      "Git Bash": {
+        "source": "Git Bash"
+      },
+      "PowerShell": {
+        "icon": "terminal-powershell",
+        "source": "PowerShell"
+      }
+    },
+    "window.density.editorTabHeight": "compact",
+    "workbench.colorCustomizations": {
+      "tree.indentGuidesStroke": "#888"
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.editorAssociations": {
+      "*.png": "imagePreview.previewEditor",
+      "{git,gitlens}:/**/*.{md,csv}": "default",
+      "{git,gitlens}:/**/*.{md,csv,svg}": "default"
+    },
+    "workbench.layoutControl.enabled": false,
+    "workbench.preferredDarkColorTheme": "Dracula Theme",
+    "workbench.tree.indent": 15,
+    "workbench.tree.renderIndentGuides": "always",
+    "files.associations": {
+      "*.embeddedhtml": "html",
+      ".env*": "dotenv"
+    },
+    "editor.fontLigatures": "'zero'",
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "remote.autoForwardPortsSource": "hybrid",
+    "editor.stickyScroll.enabled": false,
+    "window.commandCenter": false,
+    "window.titleSeparator": " • ",
+    "diffEditor.hideUnchangedRegions.enabled": true,
+  }
