@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "991709821352",
+    "project_id": "facefpalooza-fc0f2",
+    "storage_bucket": "facefpalooza-fc0f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991709821352:android:9065e62b63d3eef930459d",
+        "android_client_info": {
+          "package_name": "br.facef.facefpalooza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU9Qz7dsRpqpyhv7tfcOSfMKD7DhhWEVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
