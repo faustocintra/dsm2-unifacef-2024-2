@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1001724629574',
     projectId: 'facef-palooza',
     storageBucket: 'facef-palooza.appspot.com',
-    iosBundleId: 'com.example.facefpalooza',
+    iosBundleId: 'br.facef.facefpalooza',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -73,7 +73,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1001724629574',
     projectId: 'facef-palooza',
     storageBucket: 'facef-palooza.appspot.com',
-    iosBundleId: 'com.example.facefpalooza',
+    iosBundleId: 'br.facef.facefpalooza',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
