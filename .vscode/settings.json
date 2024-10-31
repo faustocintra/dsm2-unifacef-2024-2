@@ -135,7 +135,7 @@
       "{git,gitlens}:/**/*.{md,csv,svg}": "default"
     },
     "workbench.layoutControl.enabled": false,
-    "workbench.preferredDarkColorTheme": "Dracula Theme",
+    "workbench.preferredDarkColorTheme": "Monospace Light",
     "workbench.tree.indent": 15,
     "workbench.tree.renderIndentGuides": "always",
     "files.associations": {
