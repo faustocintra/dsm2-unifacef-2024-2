@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'widgets/act_list.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 void main() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Inicializa o Firebase apenas uma vez
+  await Firebase.initializeApp(); // Isso deve ser chamado uma única vez
+
+  runApp(MyApp()); // Após a inicialização do Firebase, execute seu app
 }
 
 class MyApp extends StatelessWidget {
