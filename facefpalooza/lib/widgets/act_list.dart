@@ -21,14 +21,22 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name']),
-                subtitle: Wrap(
-                    spacing: 8,
-                    runSpacing: 4,
-                    children: act['tags']
-                        .map<Widget>((tag) => Chip(label: Text("#$tag")))
-                        .toList()));
+  leading: CircleAvatar(child: Text("${act['day']}")),
+  title: Text(
+    act['name'],
+    style: const TextStyle(
+      fontSize: 20, // Aumenta o tamanho da fonte
+      fontWeight: FontWeight.bold, // Deixa o texto em negrito
+    ),
+  ),
+  subtitle: Wrap(
+    spacing: 8,
+    runSpacing: 4,
+    children: act['tags']
+        .map<Widget>((tag) => Chip(label: Text("#$tag")))
+        .toList(),
+  ),
+);
           }).toList());
         });
   }
