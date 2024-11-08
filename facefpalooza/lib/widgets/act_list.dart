@@ -17,7 +17,7 @@ class ActList extends StatelessWidget {
           }
 
           var list = snapshot.data?.docs ?? [];
-
+          return Text(list)
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
