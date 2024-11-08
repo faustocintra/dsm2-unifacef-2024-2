@@ -46,7 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '65085272309',
     projectId: 'facefpalooza-559d4',
     authDomain: 'facefpalooza-559d4.firebaseapp.com',
-    storageBucket: 'facefpalooza-559d4.appspot.com',
+    storageBucket: 'facefpalooza-559d4.firebasestorage.app',
     measurementId: 'G-P2JHKJ8M0L',
   );
 
@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
     appId: '1:65085272309:android:1c9115d3783b44efc115bc',
     messagingSenderId: '65085272309',
     projectId: 'facefpalooza-559d4',
-    storageBucket: 'facefpalooza-559d4.appspot.com',
+    storageBucket: 'facefpalooza-559d4.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
     appId: '1:65085272309:ios:07e3286b3a37fe4dc115bc',
     messagingSenderId: '65085272309',
     projectId: 'facefpalooza-559d4',
-    storageBucket: 'facefpalooza-559d4.appspot.com',
+    storageBucket: 'facefpalooza-559d4.firebasestorage.app',
     iosBundleId: 'com.example.facepalooza',
   );
 
@@ -72,7 +72,7 @@ class DefaultFirebaseOptions {
     appId: '1:65085272309:ios:07e3286b3a37fe4dc115bc',
     messagingSenderId: '65085272309',
     projectId: 'facefpalooza-559d4',
-    storageBucket: 'facefpalooza-559d4.appspot.com',
+    storageBucket: 'facefpalooza-559d4.firebasestorage.app',
     iosBundleId: 'com.example.facepalooza',
   );
 
@@ -82,7 +82,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '65085272309',
     projectId: 'facefpalooza-559d4',
     authDomain: 'facefpalooza-559d4.firebaseapp.com',
-    storageBucket: 'facefpalooza-559d4.appspot.com',
+    storageBucket: 'facefpalooza-559d4.firebasestorage.app',
     measurementId: 'G-HYRL5KNGRV',
   );
 

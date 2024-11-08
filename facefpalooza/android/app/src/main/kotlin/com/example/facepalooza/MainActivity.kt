@@ -1,4 +1,4 @@
-package com.example.facepalooza
+package br.facef.facefpalooza
 
 import io.flutter.embedding.android.FlutterActivity
 
