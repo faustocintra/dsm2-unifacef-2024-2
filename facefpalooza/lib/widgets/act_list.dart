@@ -10,24 +10,27 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('acts').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        stream: FirebaseFirestore.instance.collection('acts').orderBy('day').orderBy('relevance').snapshots(), // aqui eu coloquei o order by para classificar os meus atributos "day" e "relevance" na ordem crescente
+         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
 
-          var list = snapshot.data?.docs ?? [];
-          return Text(list)
+          var list = snapshot.data?.docs ?? []; 
+          
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
                 leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name']),
+                title: Text(act['name'],  
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                
+               
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
-                        .map<Widget>((tag) => Chip(label: Text("#$tag")))
+                        .map<Widget>((tag) => Chip(label: Text("#$tag"), backgroundColor: Colors.blue.shade200)) // widget Chip na paleta de cores Material tom 200
                         .toList()));
           }).toList());
         });
