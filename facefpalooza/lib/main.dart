@@ -38,10 +38,6 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
-        //Adicioando o chipThema para estilizar as tags
-        chipTheme: const ChipThemeData(
-          backgroundColor: Colors.deepPurple, //Cor de fundo das tags
-        ),
       ),
 
       home: const MyHomePage(title: 'Facefpalooza'),

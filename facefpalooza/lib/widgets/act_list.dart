@@ -35,7 +35,11 @@ class ActList extends StatelessWidget {
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
-                        .map<Widget>((tag) => Chip(label: Text("#$tag")))
+                        .map<Widget>((tag) => Chip(
+                            // Widget Chip
+                            label: Text("#$tag"),
+                            //Adicionando uma cor do Material com cor de fundo do widget Chip
+                            backgroundColor: Colors.deepPurple))
                         .toList()));
           }).toList());
         });
