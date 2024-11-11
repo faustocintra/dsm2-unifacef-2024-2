@@ -12,8 +12,8 @@ class ActList extends StatelessWidget {
     return StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('acts')
-            /*.orderBy('day') // Ordenando primeiro por dia
-            .orderBy('relevance') // Ordenando depois por relevancia*/
+            .orderBy('day')
+            .orderBy('relevance')
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
@@ -26,12 +26,17 @@ class ActList extends StatelessWidget {
               children: list.map<Widget>((act) {
             return ListTile(
                 leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name']),
+                title: Text(act['name'],
+                style: const TextStyle(
+                  fontSize: 20, // Aumenta o tamanho da fonte
+                  fontWeight: FontWeight.bold, // Coloca em negrito
+                ),
+                ),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
-                        .map<Widget>((tag) => Chip(label: Text("#$tag")))
+                        .map<Widget>((tag) => Chip(label: Text("#$tag"), backgroundColor: Colors.indigoAccent,))
                         .toList()));
           }).toList());
         });
