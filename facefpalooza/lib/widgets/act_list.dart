@@ -10,7 +10,12 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('acts').snapshots(),
+        stream: FirebaseFirestore.instance
+            .collection('acts')
+            //utilizando o orderBy para ordenar os dados recebidos pelo firebase
+            .orderBy('day') // Ordenando por dia
+            .orderBy('relevance') // Ordenando por relevância
+            .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -22,7 +27,10 @@ class ActList extends StatelessWidget {
               children: list.map<Widget>((act) {
             return ListTile(
                 leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name']),
+                //Junto ao titúlo, é adicionado uma const textStyle para modificarmos o estilo do texto, adicionando tamanho e peso da fonte
+                title: Text(act['name'],
+                    style: const TextStyle(
+                        fontSize: 18.0, fontWeight: FontWeight.bold)),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
