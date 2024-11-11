@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facefpalooza',
-      themeMode: ThemeMode.dark, // Modo do tema (segue o sistema)
+      themeMode: ThemeMode.system, // Modo do tema (segue o sistema)
 
       // Configuração do tema claro
       theme: ThemeData(
