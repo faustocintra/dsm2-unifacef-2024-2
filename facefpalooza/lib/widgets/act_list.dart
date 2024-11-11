@@ -9,27 +9,46 @@ class ActList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  //abaixo está o codigo de ordernar por dia, e depois a segunda order por relevancia
     return StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('acts').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
-          }
+      stream: FirebaseFirestore.instance
+          .collection('acts')
+          .orderBy('day') // Primeira ordem de prioridade
+          .orderBy('relevance') // Segunda ordem de prioridade
+          .snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
 
-          var list = snapshot.data?.docs ?? [];
+        var list = snapshot.data?.docs ?? [];
 
-          return ListView(
-              children: list.map<Widget>((act) {
+        return ListView(
+          children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name']),
-                subtitle: Wrap(
-                    spacing: 8,
-                    runSpacing: 4,
-                    children: act['tags']
-                        .map<Widget>((tag) => Chip(label: Text("#$tag")))
-                        .toList()));
-          }).toList());
-        });
+              leading: CircleAvatar(child: Text("${act['day']}")),
+              title: Text(
+                act['nome'],
+                style: const TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ), 
+              ),
+              subtitle: Wrap(
+                spacing: 8,
+                runSpacing: 4,
+                children: act['tags']
+                    .map<Widget>((tag) => Chip(
+                          label: Text("#$tag"),
+                          backgroundColor: Colors.lightBlue.shade200,
+                        ))
+                    .toList(),
+              ),
+            );
+          }).toList(),
+        );
+      },
+    );
   }
 }
