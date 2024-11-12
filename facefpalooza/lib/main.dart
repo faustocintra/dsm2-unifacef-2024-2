@@ -4,17 +4,13 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Inicializa o Firebase apenas uma vez
-  await Firebase.initializeApp(); // Isso deve ser chamado uma única vez
-
-  runApp(MyApp()); // Após a inicialização do Firebase, execute seu app
+  await Firebase.initializeApp();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
+// This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,9 +31,21 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.yellow,
+          secondary: const Color(0xFF151D26),
+        ),
         useMaterial3: true,
       ),
+      // Implementando o tema escuro no aplicativo
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.yellow,
+            secondary: const Color(0xFF151D26),
+            brightness: Brightness.dark),
+        useMaterial3: true,
+      ),
+      themeMode: ThemeMode.dark,
       home: const MyHomePage(title: 'Facefpalooza'),
     );
   }
@@ -62,19 +70,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
