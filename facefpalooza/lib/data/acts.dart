@@ -1,17 +1,11 @@
-/* Classe que representa as informações as informações das bandas
-   que irão tocar no Facefpalooza
-*/
 class Act {
   final String name;
   final int day;
   final int relevance;
   final List<String> tags;
-
-  // Construtor
   const Act(this.name, this.day, this.relevance, this.tags);
 }
 
-// Lineup
 const lineup = [
   Act("Scorpions", 27, 0, ["Hard Rock", "Classic Rock"]),
   Act("Alok", 27, 1, ["Electronic", "DJ"]),
