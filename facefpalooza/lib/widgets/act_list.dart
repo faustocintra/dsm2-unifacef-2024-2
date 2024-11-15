@@ -11,9 +11,10 @@ class ActList extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder(
         stream: FirebaseFirestore.instance
+            // Ordenando primeiro por dia e depois por relevância
             .collection('acts')
-            .orderBy('day')
-            .orderBy('relevance')
+            .orderBy('day') // Dia
+            .orderBy('relevance') // Relevância
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
@@ -36,6 +37,7 @@ class ActList extends StatelessWidget {
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
+                        // Widget Chip com cor mudada para "indigo"
                         .map<Widget>((tag) => Chip(label: Text("#$tag"), backgroundColor: Colors.indigoAccent,))
                         .toList()));
           }).toList());

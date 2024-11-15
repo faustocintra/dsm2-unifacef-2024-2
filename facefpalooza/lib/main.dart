@@ -24,11 +24,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facefpalooza',
+      // Definindo o tema com base na função "lightModeEnable" da pasta provider/mode_provider.dart 
       theme: Provider.of<ModeProvider>(context).lightModeEnable
-          ? ModeTheme.lightMode
-          : ModeTheme.darkMode,
+          ? ModeTheme.lightMode // Se o modo claro tiver habilitado, o thema será light
+          : ModeTheme.darkMode, // Se não, irá ser o tema dark
       home: MyHomePage(
-        Provider.of<ModeProvider>(context).lightModeEnable,
+        Provider.of<ModeProvider>(context).lightModeEnable, // Passando o valor de "lightModeEnable" na tela inicial 
         title: "Facefpalooza",
       ),
     );
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   bool isLight;
 
-  MyHomePage(this.isLight, {super.key, required this.title});
+  MyHomePage(this.isLight, {super.key, required this.title}); // Parâmetro para indicar se o tema está claro ou escuro
 
   final String title;
 
@@ -61,21 +62,21 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
           actions: [
+
+            // Botão para alternar entre os modos claro/escuro
             ElevatedButton.icon(
-              // Ícone do botão
+              // Ação ao pressionar o botão
               onPressed: () {
                 Provider.of<ModeProvider>(context, listen: false).chaneMode();
                 setState(() {
-                  widget.isLight = !widget.isLight; // Alterando o valor de isLight
+                  widget.isLight = !widget.isLight; // Alternando o valor de isLight
                 });
               },
              
               icon:  const Icon(Icons.dark_mode),
-              label: Text(widget.isLight ? "light" : "dark"),
+              label: Text(widget.isLight ? "light" : "dark"), // O texto do botão alterna entre "light" e "dark"
             ),
           ],
         ),
