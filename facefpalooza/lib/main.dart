@@ -11,90 +11,77 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Facefpalooza',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Facefpalooza'),
-    );
-  }
+  State<MyApp> createState() => _MyAppState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class _MyAppState extends State<MyApp> {
+  // Variável para controlar o tema (claro ou escuro)
+  bool _isDarkMode = false;
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
+  // Função para alternar entre os temas
+    // Adicionando suporte para alternância de tema (claro/escuro) no aplicativo.
+    // 1. Criei a variável '_isDarkMode' para controlar se o tema atual é escuro ou claro.
+    // 2. A função '_toggleTheme' altera o valor de '_isDarkMode' ao ser chamada, alternando entre os temas.
+    // 3. No 'MaterialApp', configurei o 'theme' para o tema claro, e 'darkTheme' para o tema escuro, 
+    //    utilizando 'colorScheme' para definir as cores e 'brightness' para o tema escuro.
+    // 4. A propriedade 'themeMode' é dinâmica e depende do valor de '_isDarkMode'. Se 'true', o tema escuro é ativado, 
+    //    caso contrário, o tema claro é aplicado.
+    // 5. Na 'AppBar', foi adicionado um 'IconButton' com o ícone de brilho (brightness_6), que chama a função 'toggleTheme' 
+    //    para alternar entre os temas quando pressionado.
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
+  void _toggleTheme() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      _isDarkMode = !_isDarkMode;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    return MaterialApp(
+      title: 'Facefpalooza',
+      theme: ThemeData(
+        // Tema claro
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      darkTheme: ThemeData(
+        // Tema escuro
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple, brightness: Brightness.dark),
+        useMaterial3: true,
+      ),
+      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light, // Alterna entre os temas
+      home: MyHomePage(
+        title: 'Facefpalooza',
+        toggleTheme: _toggleTheme, // Passa a função para o widget
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  final String title;
+  final VoidCallback toggleTheme; // Função de alternância de tema
+
+  const MyHomePage({super.key, required this.title, required this.toggleTheme});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          // TRY THIS: Try changing the color here to a specific color (to
-          // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-          // change color while the other colors stay the same.
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: Text(widget.title),
-        ),
-        body:
-            const ActList() // This trailing comma makes auto-formatting nicer for build methods.
-        );
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_6),
+            onPressed: toggleTheme, // Chama a função para alternar o tema
+          ),
+        ],
+      ),
+      body: const ActList(),
+    );
   }
 }
