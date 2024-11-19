@@ -22,12 +22,14 @@ class ActList extends StatelessWidget {
               children: list.map<Widget>((act) {
             return ListTile(
                 leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name']),
+                title: Text(act['name'],
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20) // Nome em negrito e font aumentada
+                ),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
-                        .map<Widget>((tag) => Chip(label: Text("#$tag")))
+                        .map<Widget>((tag) => Chip(label: Text("#$tag"), backgroundColor: Colors.pink[50])) //adicionando cor do widget chip
                         .toList()));
           }).toList());
         });

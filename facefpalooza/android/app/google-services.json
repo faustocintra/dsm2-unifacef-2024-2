@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:985149544142:android:f3cb8f86da7377f8bd229f",
+        "android_client_info": {
+          "package_name": "br.facef.fa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIQTFyQUXC8Up-OdP0JVH-CYpmundyV4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:985149544142:android:8e2115891ed46a30bd229f",
         "android_client_info": {
           "package_name": "br.facef.facefpalooza"
