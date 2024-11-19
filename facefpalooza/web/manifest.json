@@ -1,6 +1,6 @@
 {
-    "name": "facepalooza",
-    "short_name": "facepalooza",
+    "name": "facefpalooza",
+    "short_name": "facefpalooza",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
