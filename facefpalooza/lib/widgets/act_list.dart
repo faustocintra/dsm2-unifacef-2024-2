@@ -10,7 +10,12 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('acts').snapshots(),
+        stream: FirebaseFirestore.instance.collection('acts')
+        //orderBy day e relevance para ordenar pelo dia e relevância. Assim como requisitado no trabalho
+        //foi necessário criar um index na database firestore para conseguir executar a query
+        .orderBy("day")
+        .orderBy("relevance") 
+        .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -22,7 +27,11 @@ class ActList extends StatelessWidget {
               children: list.map<Widget>((act) {
             return ListTile(
                 leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name']),
+                title: Text(
+                  act['name'],
+                  //Adicionando style para definir a fonte como "bold", negrito
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
