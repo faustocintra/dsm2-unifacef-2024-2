@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       valueListenable: _themeNotifier,
       builder: (context, themeMode, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Facefpalooza',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
