@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../data/act.dart';
 
+//troquei a sequencia das colunas colocando o cicleavatar no fim
+// desativei o banner do main.dart
+
 class ActList extends StatelessWidget {
   const ActList({super.key});
 
@@ -29,15 +32,6 @@ class ActList extends StatelessWidget {
           child: Column(
             children: list.map<Widget>((act) {
               return ListTile(
-                leading: CircleAvatar(
-                  child: Text(
-                    "${act['day']}",
-                    style: const TextStyle(
-                      fontSize: 28,
-                      // Aumenta o tamanho da fonte, estava desproporcional
-                    ),
-                  ),
-                ),
                 title: Text(
                   act['name'], // Aqui é onde o nome da atração é exibido
                   style: const TextStyle(
@@ -64,6 +58,16 @@ class ActList extends StatelessWidget {
                           : Colors.purple[100], // Cor de fundo no tema claro
                     );
                   }).toList(),
+                ),
+                trailing: CircleAvatar(
+                  // Move o CircleAvatar para o lado direito da tela
+                  child: Text(
+                    "${act['day']}",
+                    style: const TextStyle(
+                      fontSize: 28,
+                      // Aumenta o tamanho da fonte, estava desproporcional
+                    ),
+                  ),
                 ),
               );
             }).toList(),

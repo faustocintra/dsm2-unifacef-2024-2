@@ -23,15 +23,15 @@ class _MyAppState extends State<MyApp> {
   bool _isDarkMode = false;
 
   // Função para alternar entre os temas
-    // Adicionando suporte para alternância de tema (claro/escuro) no aplicativo.
-    // 1. Criei a variável '_isDarkMode' para controlar se o tema atual é escuro ou claro.
-    // 2. A função '_toggleTheme' altera o valor de '_isDarkMode' ao ser chamada, alternando entre os temas.
-    // 3. No 'MaterialApp', configurei o 'theme' para o tema claro, e 'darkTheme' para o tema escuro, 
-    //    utilizando 'colorScheme' para definir as cores e 'brightness' para o tema escuro.
-    // 4. A propriedade 'themeMode' é dinâmica e depende do valor de '_isDarkMode'. Se 'true', o tema escuro é ativado, 
-    //    caso contrário, o tema claro é aplicado.
-    // 5. Na 'AppBar', foi adicionado um 'IconButton' com o ícone de brilho (brightness_6), que chama a função 'toggleTheme' 
-    //    para alternar entre os temas quando pressionado.
+  // Adicionando suporte para alternância de tema (claro/escuro) no aplicativo.
+  // 1. Criei a variável '_isDarkMode' para controlar se o tema atual é escuro ou claro.
+  // 2. A função '_toggleTheme' altera o valor de '_isDarkMode' ao ser chamada, alternando entre os temas.
+  // 3. No 'MaterialApp', configurei o 'theme' para o tema claro, e 'darkTheme' para o tema escuro, 
+  //    utilizando 'colorScheme' para definir as cores e 'brightness' para o tema escuro.
+  // 4. A propriedade 'themeMode' é dinâmica e depende do valor de '_isDarkMode'. Se 'true', o tema escuro é ativado, 
+  //    caso contrário, o tema claro é aplicado.
+  // 5. Na 'AppBar', foi adicionado um 'IconButton' com o ícone de brilho (brightness_6), que chama a função 'toggleTheme' 
+  //    para alternar entre os temas quando pressionado.
 
   void _toggleTheme() {
     setState(() {
@@ -43,6 +43,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facefpalooza',
+      debugShowCheckedModeBanner: false, // Remove o banner "Debug" no canto superior direito
       theme: ThemeData(
         // Tema claro
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
