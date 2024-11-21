@@ -17,24 +17,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, //remoção do banner de debug
       title: 'Facefpalooza',
-      themeMode: ThemeMode.system, // Modo do tema (segue o sistema)
+      themeMode: ThemeMode.dark, // tema atual
 
-      // Configuração do tema claro
+      // tema claro
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          //Adicionando o brightness para definir o tema claro
+          seedColor: Colors.green,
+          //brightness no tema claro
           brightness: Brightness.light,
         ),
         useMaterial3: true,
       ),
 
-      // Configuração do tema escuro que segue a mesma ordem do tema padrão claro
+      // tema escuro
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          //Adicionando o brightness para definir o tema escuro
+          seedColor: Colors.green,
+          //brightness no tema escuro
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
