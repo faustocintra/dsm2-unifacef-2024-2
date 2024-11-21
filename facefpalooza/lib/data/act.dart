@@ -11,6 +11,8 @@ class Act {
   const Act(this.name, this.day, this.relevance, this.tags);
 }
 
+
+
 // Lineup
 const lineup = [
   Act("Scorpions", 27, 0, ["Hard Rock", "Classic Rock"]),
