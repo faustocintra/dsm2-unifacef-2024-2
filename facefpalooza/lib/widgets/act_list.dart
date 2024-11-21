@@ -9,9 +9,11 @@ class ActList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
+    return StreamBuilder( //Builder 
+
+        //Esse segmento do código importa os dados do banco de dados e os organiza baseado no dia e relevancia da banda.
         stream: FirebaseFirestore.instance.collection('acts').orderBy("day")
-          .orderBy("relevance").orderBy("__name__").snapshots(),
+          .orderBy("relevance").orderBy("__name__").snapshots(), 
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -22,14 +24,18 @@ class ActList extends StatelessWidget {
               children: list.map<Widget>((act) {
             return ListTile(
 
-                leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name'],style: TextStyle(fontStyle: FontStyle.italic,fontSize: 30,fontWeight: FontWeight.bold)),
+                trailing: CircleAvatar(    //Ao mudar o termo de 'leading' para 'trailing', o componente 'day' é dislocado para a direita dos items da lista
+                  backgroundColor: Colors.purple,
+                  child: Text("${act['day']}")),
+                
+                //A linha abaixo modifica o nome das bandas em relação ao tamanho, estilo e se esta em negrito
+                title: Text(act['name'],style: TextStyle(fontStyle: FontStyle.italic, fontSize: 30,fontWeight: FontWeight.bold)),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
-                    children: act['tags']
+                    children: act['tags']    //Esse trecho configura os 'chips' de forma que fiquem com a cor ambar
                         .map<Widget>((tag) => Chip(
-                           backgroundColor: Colors.amber,label: Text("#$tag")))
+                           backgroundColor: Colors.amber,label: Text("#$tag")))  
                         .toList()));
           }).toList());
         });
