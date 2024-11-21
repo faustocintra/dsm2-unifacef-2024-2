@@ -10,10 +10,13 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
+        //Para fazer a ordenação, primeiro criei um index no firebase, com os campos day e relevance
         stream: FirebaseFirestore.instance
             .collection('acts')
-            .orderBy('day')
-            .orderBy('relevance')
+            .orderBy('day') //Ordenando primeiramente por dia
+            .orderBy('relevance',
+                descending:
+                    true) //Ordenando por relevância, de maneira decrescente
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
@@ -25,24 +28,31 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
+                //o elemento trailing eh exibido do lado direito,
+                //diferente do elemento leading
+                trailing: CircleAvatar(
+                    child: Text(
+                  "${act['day']}",
+                )),
                 title: Text(
+                  //Mudando estilo do nome dos artistas
                   act['name'],
-                  // style do titulo do texto - nome das bandas
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
                         .map<Widget>((tag) => Chip(
-                              label: Text("#$tag"),
-                              // adicionando cor de fundo no widget Chip
-                              backgroundColor: Theme.of(context)
-                                  .colorScheme
-                                  .primary
-                                  .withOpacity(0.2),
+                              label: Text(
+                                "#$tag",
+                                style: const TextStyle(color: Colors.black),
+                              ),
+                              //Adicionando cor de fundo ao chip
+                              backgroundColor: Colors.red.shade100,
                             ))
                         .toList()));
           }).toList());
