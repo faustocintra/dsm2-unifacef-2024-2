@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
       builder: (context, themeMode, child) {
         return MaterialApp(
           title: 'Facefpalooza',
+          //para remover a faixa de debug do app eh so adicionar essa funcao
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,

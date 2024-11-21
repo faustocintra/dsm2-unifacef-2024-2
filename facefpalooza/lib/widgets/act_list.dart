@@ -28,7 +28,9 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(
+                //o elemento trailing eh exibido do lado direito,
+                //diferente do elemento leading
+                trailing: CircleAvatar(
                     child: Text(
                   "${act['day']}",
                 )),
@@ -50,7 +52,7 @@ class ActList extends StatelessWidget {
                                 style: const TextStyle(color: Colors.black),
                               ),
                               //Adicionando cor de fundo ao chip
-                              backgroundColor: Colors.amber.shade100,
+                              backgroundColor: Colors.red.shade100,
                             ))
                         .toList()));
           }).toList());
