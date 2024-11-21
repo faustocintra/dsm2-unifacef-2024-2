@@ -37,7 +37,9 @@ class ActList extends StatelessWidget {
               children: list.map<Widget>((act) {
             return ListTile(
                 // Avatar circular que exibe o valor do campo 'day' do documento.
-                leading: CircleAvatar(child: Text("${act['day']}")),
+                trailing: CircleAvatar(
+                    child: Text(
+                        "${act['day']}")), // a propriedade trailing faz com que o day fique ao lado direito da tela
 
                 // Título do ListTile
                 title: Text(act['name'],
