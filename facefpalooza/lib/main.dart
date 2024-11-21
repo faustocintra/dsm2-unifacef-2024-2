@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       builder: (context, themeMode, child) {
         return MaterialApp(
           title: 'Facefpalooza',
+          debugShowCheckedModeBanner: false, // desabilitar o banner de "Modo de Debug" que aparece no canto superior direito
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
