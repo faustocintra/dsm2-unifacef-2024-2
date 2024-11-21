@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "287653127656",
+    "project_id": "facefpal",
+    "storage_bucket": "facefpal.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287653127656:android:3a813c8e3afb9cfbfa705d",
+        "android_client_info": {
+          "package_name": "br.facef.facefpalooza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVPRFJFK9wGBtK8GBeqfYhehn1TlpT4Ns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
