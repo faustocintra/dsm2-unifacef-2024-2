@@ -21,9 +21,9 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
+                trailing: CircleAvatar(child: Text("${act['day']}")), // troquei leading por trailing e ele passou os dias para o lado direito
                 title: Text(act['name'],  
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)), // negrito e tamanho 18
                 
                
                 subtitle: Wrap(

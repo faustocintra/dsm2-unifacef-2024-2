@@ -19,10 +19,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facefpalooza',
+      debugShowCheckedModeBanner: false,  // remove o "debug" no canto superior direito
       theme: ThemeData(
 
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        
       ),
 
       darkTheme: ThemeData(
