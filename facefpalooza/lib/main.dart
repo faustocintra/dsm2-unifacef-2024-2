@@ -32,7 +32,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facefpalooza',
-      //tema dinamico de acordo com sistema
+      // Remove a faixa "Debug" no canto superior direito
+      debugShowCheckedModeBanner: false,
+      // tema dinâmico de acordo com as cores do sistema
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
@@ -72,10 +74,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
-        // botao para alterar entre modo claro e escuro
+        // botão para alterar entre modo claro e escuro
         actions: [
           IconButton(
-            icon: Icon(Icons.brightness_6),
+            icon: const Icon(Icons.brightness_6),
             onPressed: widget.toggleTheme, // Alterna entre claro e escuro
           ),
         ],

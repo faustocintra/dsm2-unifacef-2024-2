@@ -25,7 +25,8 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
+                // Movendo a data (day) para o lado direito
+                trailing: CircleAvatar(child: Text("${act['day']}")),
                 title: Text(
                   act['name'],
                   // style do titulo do texto - nome das bandas
