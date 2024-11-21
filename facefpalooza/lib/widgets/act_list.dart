@@ -24,16 +24,29 @@ class ActList extends StatelessWidget {
             children: list.map<Widget>((act) {
               return ListTile(
                 leading: CircleAvatar(
-                  child: Text("${act['day']}"),
-                  foregroundColor: Color(0xFFFAFAFA), // Texto branco no avatar
+                  child: Icon(Icons.music_note), // Ícone ou qualquer outro elemento
+                  foregroundColor: Color(0xFFFAFAFA),
                 ),
-                title: Text(
-                  act['name'],
-                  style: TextStyle(
-                    fontSize: 20, // Tamanho maior da fonte
-                    fontWeight: FontWeight.bold, // Texto em negrito
-                    color: Color(0xFFFAFAFA), // Cor do texto para branco
-                  ),
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Move a data para o lado direito
+                  children: [
+                    Text(
+                      act['name'],
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFFAFAFA),
+                      ),
+                    ),
+                    Text(
+                      'Dia ${act['day']}', // Mostra a data à direita
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white, // Ajuste a cor conforme necessário
+                      ),
+                    ),
+                  ],
                 ),
                 subtitle: Wrap(
                   spacing: 8,
@@ -42,7 +55,7 @@ class ActList extends StatelessWidget {
                       .map<Widget>((tag) => Chip(
                             label: Text(
                               "#$tag",
-                              style: TextStyle(color: Color(0xFF212121)), // Texto preto no chip
+                              style: TextStyle(color: Color(0xFF212121)),
                             ),
                             backgroundColor: Color(0xFFFAFAFA),
                           ))
