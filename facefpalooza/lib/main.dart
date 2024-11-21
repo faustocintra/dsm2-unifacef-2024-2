@@ -3,6 +3,8 @@ import 'widgets/act_list.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
+  // Removendo faixa debug
+  WidgetsApp.debugAllowBannerOverride = false;
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());

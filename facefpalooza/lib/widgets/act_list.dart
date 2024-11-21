@@ -12,7 +12,7 @@ class ActList extends StatelessWidget {
     return StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('acts')
-            // ordenando os dados day primeiro depois relevance
+            // ordenando os dados day primeiro
             .orderBy('day')
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -25,7 +25,8 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             var listTile = ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
+                // mudando a data para o lado direito
+                trailing: CircleAvatar(child: Text("${act['day']}")),
                 title: Text(
                   act['name'],
                   style: const TextStyle(
