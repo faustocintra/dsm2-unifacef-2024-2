@@ -17,8 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //Adicionado o debug como false para remover o banner de debug
+      debugShowCheckedModeBanner: false,
       title: 'Facefpalooza',
-      themeMode: ThemeMode.system, // Modo do tema (segue o sistema)
+      themeMode: ThemeMode.dark, // Modo do tema (segue o sistema)
 
       // Configuração do tema claro
       theme: ThemeData(

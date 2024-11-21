@@ -24,24 +24,36 @@ class ActList extends StatelessWidget {
           var list = snapshot.data?.docs ?? [];
 
           return ListView(
-              children: list.map<Widget>((act) {
-            return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
+            children: list.map<Widget>((act) {
+              return ListTile(
                 //Junto ao titúlo, é adicionado uma const textStyle para modificarmos o estilo do texto, adicionando tamanho e peso da fonte
-                title: Text(act['name'],
-                    style: const TextStyle(
-                        fontSize: 18.0, fontWeight: FontWeight.bold)),
+                title: Text(
+                  act['name'] ?? 'Sem nome',
+                  style: const TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 subtitle: Wrap(
-                    spacing: 8,
-                    runSpacing: 4,
-                    children: act['tags']
-                        .map<Widget>((tag) => Chip(
-                            // Widget Chip
-                            label: Text("#$tag"),
-                            //Adicionando uma cor do Material com cor de fundo do widget Chip
-                            backgroundColor: Colors.deepPurple))
-                        .toList()));
-          }).toList());
+                  spacing: 8,
+                  runSpacing: 4,
+                  children: (act['tags'] as List<dynamic>?)
+                          ?.map<Widget>((tag) => Chip(
+                                backgroundColor: Colors.deepPurple,
+                                label: Text(
+                                  "#$tag",
+                                ),
+                              ))
+                          .toList() ??
+                      [],
+                ),
+                // Foi removido o leading no começo do ListTile e adicionado o trailing para refereciao ao final de cada elemento
+                trailing: CircleAvatar(
+                  child: Text("${act['day']}"),
+                ),
+              );
+            }).toList(),
+          );
         });
   }
 }
