@@ -10,7 +10,11 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('acts').snapshots(),
+        stream: FirebaseFirestore.instance
+            .collection('acts')
+            .orderBy('day') // Aplicando a ordenação por dia
+            .orderBy('relevance') // Depois por relevância
+            .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -19,17 +23,34 @@ class ActList extends StatelessWidget {
           var list = snapshot.data?.docs ?? [];
 
           return ListView(
-              children: list.map<Widget>((act) {
-            return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name']),
+            children: list.map<Widget>((act) {
+              return ListTile(
+                title: Text(
+                  act['name'] ?? 'Sem nome',
+                  style: const TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 subtitle: Wrap(
-                    spacing: 8,
-                    runSpacing: 4,
-                    children: act['tags']
-                        .map<Widget>((tag) => Chip(label: Text("#$tag")))
-                        .toList()));
-          }).toList());
+                  spacing: 8,
+                  runSpacing: 4,
+                  children: (act['tags'] as List<dynamic>?)
+                          ?.map<Widget>((tag) => Chip(
+                                backgroundColor: Colors.deepPurple,
+                                label: Text(
+                                  "#$tag",
+                                ),
+                              ))
+                          .toList() ??
+                      [],
+                ),
+                trailing: CircleAvatar(
+                  child: Text("${act['day']}"),
+                ),
+              );
+            }).toList(),
+          );
         });
   }
 }
