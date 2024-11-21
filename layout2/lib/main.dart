@@ -93,8 +93,8 @@ class Layout extends StatelessWidget {
               Expanded(
                 child: Container(
                   color: Colors.red[400], // Cor de fundo da coluna
-                  child: Column(
-                    children: const [
+                  child: const Column(
+                    children: [
                       Icon(Icons.favorite, size: 50, color: Colors.white), // Ícone superior (branco)
                       Spacer(), // Espaço entre ícones
                       Icon(Icons.star, size: 50, color: Colors.white), // Ícone inferior (branco)

@@ -72,9 +72,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // cor do fundo
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // renderiza o título
         title: Text(widget.title),
-        // botão para alterar entre modo claro e escuro
+        // botão para alterar entre modo claro e noturno
         actions: [
           IconButton(
             icon: const Icon(Icons.brightness_6),
