@@ -26,7 +26,65 @@ class MyApp extends StatelessWidget {
                 'Eder Junior Alves Silva',
                 style: TextStyle(
                   fontSize: 30,
+<<<<<<< HEAD
                   fontWeight: FontWeight.bold, // Negrito
+=======
+                  color: Colors.lime[200], //cor
+                ),
+                textAlign: TextAlign.center, //alinhamento do texto
+              ),
+            ))
+          ],
+        ),
+        Expanded(
+            child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(child: Container(
+              color: Colors.purple[400],
+                child: const Column( //coluna com dois icones
+                  children: [
+                    Icon(Icons.android, size: 50, color: Colors.white), // cor do icone superior trocada para branca
+                    Spacer(), // espaçamento dos ícones
+                    Icon(Icons.smartphone, size: 50, color: Colors.white), // cor do icone inferior trocada para branca
+                  ],
+                )
+              )),
+            Expanded(child: Container(
+              color: Colors.cyan[400],
+                child: const Center( //coluna com um icone
+                  child: Icon(Icons.code, size: 50, color: Colors.white), // cor do icone trocada para branca
+                ),
+              )),
+            Expanded(child: Container(
+              color: Colors.teal[400],
+                child: const Center( //coluna com um icone
+                  child: Icon(Icons.code_off, size: 50, color: Colors.white), // cor do icone trocada para branca
+                ),
+              )),
+            Expanded(child: Container( 
+              color: Colors.lime[400],
+                child: const Center( //coluna com um icone
+                  child: Icon(Icons.devices, size: 50, color: Colors.white), // cor do icone trocada para branca
+                ),
+              )),
+          ],
+        )),
+        //linha adicional
+        Row(
+          children: [
+            Expanded(
+                child: Container(
+              color: Colors.red[400],
+                            height: 150,
+              alignment: Alignment.centerRight, //alinhamento do conteudo
+              padding: const EdgeInsets.all(16),
+              child: const Text( //nome da turma e estilização do texto
+                'Engenharia de Software',
+                style: TextStyle(
+                  fontSize: 25, //tamanho da fonte
+                  fontStyle: FontStyle.italic, //estilo da fonte
+>>>>>>> 97fd6ab97bd0d7a4aaebbb1a86cb4adac95ea0eb
                   color: Colors.white,
                 ),
                 textAlign: TextAlign.center,
