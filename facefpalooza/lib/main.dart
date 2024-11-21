@@ -8,55 +8,82 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  // Controlador de tema
+  final ValueNotifier<ThemeMode> _themeModeNotifier =
+      ValueNotifier(ThemeMode.system);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Facefpalooza',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      themeMode:
-          ThemeMode.system, // Permite alternar entre os temas automaticamente
-      home: const MyHomePage(title: 'Facefpalooza'),
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: _themeModeNotifier,
+      builder: (context, themeMode, child) {
+        return MaterialApp(
+          title: 'Facefpalooza',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple,
+              brightness: Brightness.light, // Definido para o tema claro
+            ),
+            useMaterial3: true,
+          ),
+          darkTheme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple,
+              brightness: Brightness.dark, // Definido para o tema escuro
+            ),
+            useMaterial3: true,
+          ),
+          themeMode: themeMode,
+          home: MyHomePage(
+            title: 'Facefpalooza',
+            onThemeModeChanged: (mode) => _themeModeNotifier.value = mode,
+            currentThemeMode: themeMode,
+          ),
+        );
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({
+    super.key,
+    required this.title,
+    required this.onThemeModeChanged,
+    required this.currentThemeMode,
+  });
 
   final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  final ValueChanged<ThemeMode> onThemeModeChanged;
+  final ThemeMode currentThemeMode;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(title),
+        actions: [
+          IconButton(
+            icon: Icon(currentThemeMode == ThemeMode.dark
+                ? Icons.dark_mode
+                : Icons.light_mode),
+            onPressed: () {
+              // Alterna entre os temas claro e escuro
+              onThemeModeChanged(
+                currentThemeMode == ThemeMode.dark
+                    ? ThemeMode.light
+                    : ThemeMode.dark,
+              );
+            },
+          ),
+        ],
       ),
       body: const ActList(),
     );
