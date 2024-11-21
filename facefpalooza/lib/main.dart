@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: ActList(),
       ),
+       debugShowCheckedModeBanner: false // Essa linha de codigo retira o banner de debug mode
     );
   }
 }

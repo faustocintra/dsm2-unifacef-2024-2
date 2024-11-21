@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../data/act.dart';
 
 class ActList extends StatelessWidget {
   const ActList({super.key});
 
-  final data = lineup;
-
   @override
   Widget build(BuildContext context) {
-  //abaixo está o codigo de ordernar por dia, e depois a segunda order por relevancia
+    // Código para ordenar por dia e, depois, por relevância
     return StreamBuilder(
       stream: FirebaseFirestore.instance
           .collection('acts')
@@ -26,24 +23,33 @@ class ActList extends StatelessWidget {
         return ListView(
           children: list.map<Widget>((act) {
             return ListTile(
-              leading: CircleAvatar(child: Text("${act['day']}")),
-              title: Text(
-                act['nome'],
-                style: const TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
-                ), 
+              trailing: CircleAvatar(child: Text("${act['day']}")), // Alinha à direita
+              title: Align(
+                alignment: Alignment.centerRight, // Alinha o texto à direita
+                child: Text(
+                  act['nome'],
+                  style: const TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              subtitle: Wrap(
-                spacing: 8,
-                runSpacing: 4,
-                children: act['tags']
-                    .map<Widget>((tag) => Chip(
+              subtitle: Align(
+                alignment: Alignment.centerRight, // Alinha os chips à direita
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 4,
+                  alignment: WrapAlignment.end, // Ajusta a posição dos chips
+                  children: act['tags']
+                      .map<Widget>(
+                        (tag) => Chip(
                           label: Text("#$tag"),
                           backgroundColor: Colors.lightBlue.shade200,
-                        ))
-                    .toList(),
+                        ),
+                      )
+                      .toList(),
+                ),
               ),
             );
           }).toList(),
