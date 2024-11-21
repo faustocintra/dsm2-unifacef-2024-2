@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark, // Define o tema escuro permanentemente
       home: const MyHomePage(title: 'Facefpalooza'),
+      debugShowCheckedModeBanner: false, //Removendo a faixia Debug solicitada 
     );
   }
 }

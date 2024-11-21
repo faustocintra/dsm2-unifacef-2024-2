@@ -11,7 +11,7 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('acts').snapshots(),
+      stream: FirebaseFirestore.instance.collection('acts').orderBy('day', descending: true).snapshots(), // Ordenando os dias em ordem descrecente 
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
@@ -22,7 +22,7 @@ class ActList extends StatelessWidget {
         return ListView(
           children: list.map<Widget>((act) {
             return ListTile(
-              leading: CircleAvatar(child: Text("${act['day']}")),
+              trailing: CircleAvatar(child: Text("${act['day']}")), // alterando para trainling para mudar de lado os dias dentro da lineup
               title: Text(
                 act['name'],
                 style: TextStyle(fontWeight: FontWeight.bold), // Colocando o nome em negrito
