@@ -10,10 +10,11 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
+        //ordenando os shows por data e relevancia
         stream: FirebaseFirestore.instance
             .collection('acts')
             .orderBy('day')
-            .orderBy('relevance')
+            .orderBy('relevance', descending: true)
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
@@ -25,24 +26,29 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
+                //trocando a data para direita
+                trailing: CircleAvatar(
+                    child: Text(
+                  "${act['day']}",
+                )),
                 title: Text(
+                  //Mudando estilo dos nomes
                   act['name'],
-                  // style do titulo do texto - nome das bandas
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
                         .map<Widget>((tag) => Chip(
-                              label: Text("#$tag"),
-                              // adicionando cor de fundo no widget Chip
-                              backgroundColor: Theme.of(context)
-                                  .colorScheme
-                                  .primary
-                                  .withOpacity(0.2),
+                              label: Text(
+                                "#$tag",
+                                style: const TextStyle(color: Colors.black),
+                              ),
+                              backgroundColor: Colors.red.shade100,
                             ))
                         .toList()));
           }).toList());

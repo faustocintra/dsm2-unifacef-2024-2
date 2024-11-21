@@ -41,27 +41,27 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC7XkZXGzKruDkep3da-33O7qwp2pYc7sk',
-    appId: '1:1001724629574:web:712de6df8804852fdd3047',
-    messagingSenderId: '1001724629574',
+    apiKey: 'AIzaSyDaaovrWItzk_3Yo4QFj81aQ9cM4xc3s4s',
+    appId: '1:213225063141:web:98faa8691cdd6f6b15ca0c',
+    messagingSenderId: '213225063141',
     projectId: 'facef-palooza',
     authDomain: 'facef-palooza.firebaseapp.com',
     storageBucket: 'facef-palooza.appspot.com',
-    measurementId: 'G-EN78GBGJPQ',
+    measurementId: 'G-LBM9VTRF39',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCecHLd_nmSAyTGBIcaObCEMXeHMQmc85U',
-    appId: '1:1001724629574:android:8338593e82f3cebcdd3047',
-    messagingSenderId: '1001724629574',
+    appId: '1:213225063141:android:e7369e2747858cec715ca0c',
+    messagingSenderId: '213225063141',
     projectId: 'facef-palooza',
     storageBucket: 'facef-palooza.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDsxiU6VGTVtqzSNcF8vQgSfX_lzXbqUFw',
-    appId: '1:1001724629574:ios:3b21c93dd8d11731dd3047',
-    messagingSenderId: '1001724629574',
+    appId: '1:213225063141:ios:b84eedb1ba1f7ce815ca0c',
+    messagingSenderId: '213225063141',
     projectId: 'facef-palooza',
     storageBucket: 'facef-palooza.appspot.com',
     iosBundleId: 'br.facef.facefpalooza',
@@ -69,8 +69,8 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDsxiU6VGTVtqzSNcF8vQgSfX_lzXbqUFw',
-    appId: '1:1001724629574:ios:3b21c93dd8d11731dd3047',
-    messagingSenderId: '1001724629574',
+    appId: '1:213225063141:ios:3b21c93dd8d56781dd3047',
+    messagingSenderId: '213225063141',
     projectId: 'facef-palooza',
     storageBucket: 'facef-palooza.appspot.com',
     iosBundleId: 'br.facef.facefpalooza',
@@ -78,12 +78,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions windows = FirebaseOptions(
     apiKey: 'AIzaSyC7XkZXGzKruDkep3da-33O7qwp2pYc7sk',
-    appId: '1:1001724629574:web:ecd640d5ca9f5d47dd3047',
-    messagingSenderId: '1001724629574',
+    appId: '1:213225063141:web:ecdfaf40d5ca9f5d47dd3057',
+    messagingSenderId: '213225063141',
     projectId: 'facef-palooza',
     authDomain: 'facef-palooza.firebaseapp.com',
     storageBucket: 'facef-palooza.appspot.com',
-    measurementId: 'G-FYS9TFVM26',
+    measurementId: 'G-LBM9VTRF39',
   );
 
 }

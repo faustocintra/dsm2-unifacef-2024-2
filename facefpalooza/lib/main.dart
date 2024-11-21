@@ -8,79 +8,84 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  ThemeMode _themeMode = ThemeMode.system;
-
-  void _toggleTheme() {
-    setState(() {
-      _themeMode =
-          _themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
-    });
-  }
+  //tema do app claro ou escuro
+  final ValueNotifier<ThemeMode> _themeNotifier =
+      ValueNotifier(ThemeMode.system);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Facefpalooza',
-      //tema dinamico de acordo com sistema
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.light,
-        ),
-        useMaterial3: true,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.dark,
-        ),
-        useMaterial3: true,
-        scaffoldBackgroundColor: Colors.black,
-      ),
-      themeMode: _themeMode,
-      home: MyHomePage(title: 'Facefpalooza', toggleTheme: _toggleTheme),
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: _themeNotifier,
+      builder: (context, themeMode, child) {
+        return MaterialApp(
+          title: 'Facefpalooza',
+          //removendo a faixa de debug
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          //Adicionando o tema escuro
+          darkTheme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple,
+              brightness: Brightness.dark,
+            ),
+            useMaterial3: true,
+          ),
+          themeMode: themeMode,
+          home: MyHomePage(
+            title: 'Facefpalooza',
+            themeNotifier: _themeNotifier,
+          ),
+        );
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title, required this.toggleTheme});
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({
+    super.key,
+    required this.title,
+    required this.themeNotifier,
+  });
 
   final String title;
-  final VoidCallback toggleTheme;
+  final ValueNotifier<ThemeMode> themeNotifier;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-        // botao para alterar entre modo claro e escuro
-        actions: [
-          IconButton(
-            icon: Icon(Icons.brightness_6),
-            onPressed: widget.toggleTheme, // Alterna entre claro e escuro
+        title: Text(title),
+      ),
+      body: Column(
+        //Adicionando o botão de trocar o tema do app
+        children: [
+          const Expanded(child: ActList()),
+          ValueListenableBuilder<ThemeMode>(
+            valueListenable: themeNotifier,
+            builder: (context, themeMode, child) {
+              return SwitchListTile(
+                title: const Text("Ativar tema escuro"),
+                value: themeMode == ThemeMode.dark,
+                onChanged: (value) {
+                  themeNotifier.value =
+                      value ? ThemeMode.dark : ThemeMode.light;
+                },
+              );
+            },
           ),
         ],
       ),
-      body: const ActList(),
     );
   }
 }
