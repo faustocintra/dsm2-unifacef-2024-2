@@ -21,17 +21,46 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
-                title: Text(act['name'],
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20) // Nome em negrito e font aumentada
+                // Mudando a posição do campo 'day' para o lado direito (trailing)
+                title: Text(
+                  act['name'],
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20), // Nome em negrito e fonte aumentada
                 ),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
-                        .map<Widget>((tag) => Chip(label: Text("#$tag"), backgroundColor: Colors.pink[50])) //adicionando cor do widget chip
-                        .toList()));
+                        .map<Widget>((tag) => Chip(
+                              label: Text("#$tag"),
+                              backgroundColor: Colors.grey[500], // Alterando a cor do Chip
+                            ))
+                        .toList()),
+                trailing: CircleAvatar(
+                  child: Text("${act['day']}"), // Exibindo a data no lado direito
+                ));
           }).toList());
         });
+  }
+}
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    //para tirar a faixa iniciei o flutter run no release
+    return MaterialApp(
+      debugShowCheckedModeBanner: false, // tentando remover a faixa "Debug"
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Facefpalooza'),
+        ),
+        body: const ActList(),
+      ),
+    );
   }
 }
