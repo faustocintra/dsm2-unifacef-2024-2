@@ -24,6 +24,8 @@ class MyApp extends StatelessWidget {
       valueListenable: _themeModeNotifier,
       builder: (context, themeMode, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner:
+              false, //Adicionei essa função para remover a faixa "Debug"
           title: 'Facefpalooza',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
