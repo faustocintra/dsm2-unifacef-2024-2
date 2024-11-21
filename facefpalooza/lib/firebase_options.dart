@@ -71,7 +71,7 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyACtBdxRrXs4ZUddU6X7us_T3M7fpIRZsU',
     appId: '1:554118240303:ios:679a8b1afa21cf3a9e4eda',
     messagingSenderId: '554118240303',
-    projectId: 'facefpalooza-787a4',
+    projectId: 'facefpalooza-787a4', 
     storageBucket: 'facefpalooza-787a4.appspot.com',
     iosBundleId: 'com.example.facefpalooza',
   );
