@@ -38,7 +38,10 @@ class Layout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // linha branca para o nome completo, em negrito tamanho 30.
+        // Primeira linha com o nome completo branca, com fonte negrito tamanho 30.
+        // Criando um Row para a primeira linha, dentro do children um expanded dentro dele
+        //criado um container como a altura e a cor de fundo
+        //apos um text para colocar um texto dentro da linha, apos isso o style do texto 
         Row(
           children: [
             Expanded(
@@ -47,7 +50,7 @@ class Layout extends StatelessWidget {
                 height: 100,
                 child: const Center(
                   child: Text(
-                    'Enzo Gabriel Silva',
+                    'Arthur Saltori Stante',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,
@@ -59,17 +62,19 @@ class Layout extends StatelessWidget {
             ),
           ],
         ),
-        // segnda linha com a data da prova, e na cor verde limão, tonalidade 200,
-        //centralizando horizontalmente.
+        // segunda linha com a data da prova em cor verde limão, tonalidade 200,
+        //centralizado horizontalmente.
+        // outra Row criada com os mesmo atribuitos porem neste container a cor do fundo foi alterada
+        // e o text tambem tanto o que esta escrito como a cor dele 
         Row(
           children: [
             Expanded(
               child: Container(
-                color: Colors.blue[900],
+                color: Colors.deepPurpleAccent[400],
                 height: 100,
                 child: Center(
                   child: Text(
-                    'Data da Prova: 19/09/2024',
+                    'Data da Prova: 19 / 09 / 2024',
                     style: TextStyle(
                       color: Colors.lime[200], 
                       fontSize: 25,
@@ -80,30 +85,21 @@ class Layout extends StatelessWidget {
             ),
           ],
         ),
-        // linha com quatro colunas e com icones selecionados alaeatóriamente 
+        // linha com quatro colunas, com icones aleatorios 
+        //aqui criamos somente um expanded sem o row porem atribuimos um child:Row para realizar que as colunas criadas apos fiquem na mesma linha
+        //cada container tem uma coluna onde em cada uma tem um background com cor diferente
+        // e em cada coluna tem um icone excessão da segunda coluna onde temos 2 icones
         Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
                 child: Container(
-                  color: Colors.purple[400],
+                  color: Colors.pink[400],
                   child: Column( 
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: const [ 
-                    Icon(Icons.token, size: 50, color: Colors.white), 
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.yellow[600],
-                  child: Column( 
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [ 
-                    Icon(Icons.html, size: 50, color: Colors.white), 
-                    Icon(Icons.css, size: 50, color: Colors.white), 
+                    Icon(Icons.home, size: 50, color: Colors.white), 
                     ],
                   ),
                 ),
@@ -114,18 +110,30 @@ class Layout extends StatelessWidget {
                   child: Column( 
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: const [ 
-                    Icon(Icons.add, size: 50, color: Colors.white), 
+                    Icon(Icons.grade, size: 50, color: Colors.white), 
+                    Icon(Icons.refresh, size: 50, color: Colors.white), 
                     ],
                   ),
                 ),
               ),
               Expanded(
                 child: Container(
-                  color: Colors.brown[400],
+                  color: Colors.blue[400],
                   child: Column( 
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: const [ 
-                    Icon(Icons.block, size: 50, color: Colors.white), 
+                    Icon(Icons.login, size: 50, color: Colors.white), 
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  color: Colors.purple[400],
+                  child: Column( 
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [ 
+                    Icon(Icons.apps, size: 50, color: Colors.white), 
                     ],
                   ),
                 ),
@@ -133,12 +141,16 @@ class Layout extends StatelessWidget {
             ],
           ),
         ),
-        // última linha com o nome do curso e qual a turma. A direita em itálico, em fonte 25.
+        // ultima linha com o nome da turma alinhado a direita em itálico, em fonte
+        // tamanho 25.
+        // criamos outra row para seguir embaixo das colunas como linha e nesta linhas temos
+        // um background diferente das demais e um text diferente com um alinhamento na direita
+        // e um fontstyle mudando a a escrita para italico e e uma fonte da letra de 25px
         Row(
           children: [
             Expanded(
               child: Container(
-                color: Colors.red[400],
+                color: Colors.yellow[400],
                 height: 90,
                 child: const Align(
                   alignment: Alignment.centerRight,
