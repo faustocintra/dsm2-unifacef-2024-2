@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "124403252671",
-    "project_id": "facefbalooza",
-    "storage_bucket": "facefbalooza.appspot.com"
+    "project_number": "650849350088",
+    "project_id": "facefpalooza-323ab",
+    "storage_bucket": "facefpalooza-323ab.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:124403252671:android:39281b0e7eddeca21fb50a",
+        "mobilesdk_app_id": "1:650849350088:android:2621d512840277d02250fd",
         "android_client_info": {
           "package_name": "br.facef.facefpalooza"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCirsGSOWeYUsCSI2BEdWYjROvV582hbu4"
+          "current_key": "AIzaSyCWreqr-SClZBT_FLXIQ4mKH__c1w9qXLw"
         }
       ],
       "services": {

@@ -41,49 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBn_kfJlS0OUMeyosou6vXCol_fB-6KhDQ',
-    appId: '1:124403252671:web:7288983a544d32d71fb50a',
-    messagingSenderId: '124403252671',
-    projectId: 'facefbalooza',
-    authDomain: 'facefbalooza.firebaseapp.com',
-    storageBucket: 'facefbalooza.appspot.com',
-    measurementId: 'G-QZFD777VCY',
+    apiKey: 'AIzaSyCFz-I7PZv72RTdPecnwa26aSyhlDgzz1c',
+    appId: '1:650849350088:web:394ce1508ba4f3282250fd',
+    messagingSenderId: '650849350088',
+    projectId: 'facefpalooza-323ab',
+    authDomain: 'facefpalooza-323ab.firebaseapp.com',
+    storageBucket: 'facefpalooza-323ab.firebasestorage.app',
+    measurementId: 'G-KML05HFCQ1',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCirsGSOWeYUsCSI2BEdWYjROvV582hbu4',
-    appId: '1:124403252671:android:39281b0e7eddeca21fb50a',
-    messagingSenderId: '124403252671',
-    projectId: 'facefbalooza',
-    storageBucket: 'facefbalooza.appspot.com',
+    apiKey: 'AIzaSyCWreqr-SClZBT_FLXIQ4mKH__c1w9qXLw',
+    appId: '1:650849350088:android:2621d512840277d02250fd',
+    messagingSenderId: '650849350088',
+    projectId: 'facefpalooza-323ab',
+    storageBucket: 'facefpalooza-323ab.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCgSe2_6qRzFFMCck3MIvY6IK06afkZGiI',
-    appId: '1:124403252671:ios:606b140184d9f7c01fb50a',
-    messagingSenderId: '124403252671',
-    projectId: 'facefbalooza',
-    storageBucket: 'facefbalooza.appspot.com',
+    apiKey: 'AIzaSyAwhWH-ZRwSbyTm-Iy2zwyOR6bzIxFf48U',
+    appId: '1:650849350088:ios:5f031ff37bcc139b2250fd',
+    messagingSenderId: '650849350088',
+    projectId: 'facefpalooza-323ab',
+    storageBucket: 'facefpalooza-323ab.firebasestorage.app',
     iosBundleId: 'com.example.facefpalooza',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCgSe2_6qRzFFMCck3MIvY6IK06afkZGiI',
-    appId: '1:124403252671:ios:606b140184d9f7c01fb50a',
-    messagingSenderId: '124403252671',
-    projectId: 'facefbalooza',
-    storageBucket: 'facefbalooza.appspot.com',
+    apiKey: 'AIzaSyAwhWH-ZRwSbyTm-Iy2zwyOR6bzIxFf48U',
+    appId: '1:650849350088:ios:5f031ff37bcc139b2250fd',
+    messagingSenderId: '650849350088',
+    projectId: 'facefpalooza-323ab',
+    storageBucket: 'facefpalooza-323ab.firebasestorage.app',
     iosBundleId: 'com.example.facefpalooza',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBn_kfJlS0OUMeyosou6vXCol_fB-6KhDQ',
-    appId: '1:124403252671:web:3417a7fef2e68ab01fb50a',
-    messagingSenderId: '124403252671',
-    projectId: 'facefbalooza',
-    authDomain: 'facefbalooza.firebaseapp.com',
-    storageBucket: 'facefbalooza.appspot.com',
-    measurementId: 'G-NN8SDE8SZF',
+    apiKey: 'AIzaSyCFz-I7PZv72RTdPecnwa26aSyhlDgzz1c',
+    appId: '1:650849350088:web:af67cf74c308edb32250fd',
+    messagingSenderId: '650849350088',
+    projectId: 'facefpalooza-323ab',
+    authDomain: 'facefpalooza-323ab.firebaseapp.com',
+    storageBucket: 'facefpalooza-323ab.firebasestorage.app',
+    measurementId: 'G-WP12GFK078',
   );
 
 }
