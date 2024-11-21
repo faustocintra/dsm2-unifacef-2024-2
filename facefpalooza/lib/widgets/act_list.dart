@@ -25,11 +25,11 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                // Movendo a data (day) para o lado direito
+                // Movendo a data para o lado direito
                 trailing: CircleAvatar(child: Text("${act['day']}")),
                 title: Text(
                   act['name'],
-                  // style do titulo do texto - nome das bandas
+                  // Estilizando título
                   style: const TextStyle(
                       fontSize: 18, fontWeight: FontWeight.bold),
                 ),
@@ -38,13 +38,9 @@ class ActList extends StatelessWidget {
                     runSpacing: 4,
                     children: act['tags']
                         .map<Widget>((tag) => Chip(
-                              label: Text("#$tag"),
-                              // adicionando cor de fundo no widget Chip
-                              backgroundColor: Theme.of(context)
-                                  .colorScheme
-                                  .primary
-                                  .withOpacity(0.2),
-                            ))
+                            label: Text("#$tag"),
+                            // Adicionando cor de funo
+                            backgroundColor: Colors.lightBlue))
                         .toList()));
           }).toList());
         });

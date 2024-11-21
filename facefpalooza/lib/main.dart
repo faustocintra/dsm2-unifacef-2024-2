@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
       // tema dinâmico de acordo com as cores do sistema
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.lightBlue,
           brightness: Brightness.light,
         ),
         useMaterial3: true,
@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.lightBlue,
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
@@ -72,11 +72,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // cor do fundo
+        // Cor do fundo
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // renderiza o título
+        // Renderiza o título da página
         title: Text(widget.title),
-        // botão para alterar entre modo claro e noturno
+        // Botão para alterar entre modo claro e noturno
         actions: [
           IconButton(
             icon: const Icon(Icons.brightness_6),
