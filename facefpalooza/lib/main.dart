@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facefpalooza',
+      debugShowCheckedModeBanner: false, // Remove a faixa diagonal DEBUG
       theme: ThemeData(
         // This is the theme of your application.
         //

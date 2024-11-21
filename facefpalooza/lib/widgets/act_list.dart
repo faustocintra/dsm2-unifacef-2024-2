@@ -27,8 +27,30 @@ class ActList extends StatelessWidget {
     style: const TextStyle(
       fontSize: 20, // Aumenta o tamanho da fonte
       fontWeight: FontWeight.bold, // Deixa o texto em negrito
+      color: Color(0xFFFAFAFA), // Deixa o texto em cor branca
     ),
-  ),
+  );         
+        title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Move a data para o lado direito
+                  children: [
+                    Text(
+                      act['name'],
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFFAFAFA),
+                      ),
+                    ),
+                    Text(
+                      'Dia ${act['day']}', // Mostra a data à direita
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white, // Ajuste a cor conforme necessário
+                      ),
+                    ),
+                  ],
+                ),
   subtitle: Wrap(
     spacing: 8,
     runSpacing: 4,
