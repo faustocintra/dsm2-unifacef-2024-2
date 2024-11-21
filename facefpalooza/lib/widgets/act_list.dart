@@ -25,13 +25,13 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
                 title: Text(act['name'], 
                    style: TextStyle(
                     fontWeight: FontWeight.bold, // Negrito
                     fontSize: 20, // Fonte maior
                   ),
                 ),
+                trailing: CircleAvatar(child: Text("${act['day']}")), // Adicionando o componente trailing para alterar a posição
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,

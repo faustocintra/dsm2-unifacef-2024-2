@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
    Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Facefpalooza', 
-        themeMode: ThemeMode.light, // Define o tema padrão.
+        themeMode: ThemeMode.dark, // Define o tema padrão.
+        debugShowCheckedModeBanner: false, // Removendo o banner de Debug
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.deepOrange, // Cor principal para o tema claro.
