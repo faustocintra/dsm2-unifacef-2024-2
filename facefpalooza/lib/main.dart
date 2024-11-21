@@ -11,7 +11,7 @@ void main() async {
   runApp(const MyApp());
 }
 
-//Criando um MaterialApp como colors secundarys e seed e com o tema escuro
+//MaterialApp como colors secundarys e seed e com o tema escuro
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark, // Define o tema escuro permanentemente
       home: const MyHomePage(title: 'Facefpalooza'),
+      debugShowCheckedModeBanner: false, //Removendo a faixia Debug solicitada 
     );
   }
 }
