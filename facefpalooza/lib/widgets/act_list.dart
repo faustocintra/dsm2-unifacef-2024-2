@@ -12,8 +12,10 @@ class ActList extends StatelessWidget {
     return StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('acts')
-            .orderBy('day')
-            .orderBy('relevance')
+            .orderBy('day') //Ordenando o dia
+            .orderBy('relevance',
+                descending:
+                    true) //Ordenando por relevância
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
@@ -25,24 +27,30 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
+                //O elemento trailing está no lado direito
+                trailing: CircleAvatar(
+                    child: Text(
+                  "${act['day']}",
+                )),
                 title: Text(
+                  //Mudando estilo do nome dos artistas
                   act['name'],
-                  // style do titulo do texto - nome das bandas
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: act['tags']
                         .map<Widget>((tag) => Chip(
-                              label: Text("#$tag"),
-                              // adicionando cor de fundo no widget Chip
-                              backgroundColor: Theme.of(context)
-                                  .colorScheme
-                                  .primary
-                                  .withOpacity(0.2),
+                              label: Text(
+                                "#$tag",
+                                style: const TextStyle(color: Colors.black),
+                              ),
+                              //Adicionando cor de fundo
+                              backgroundColor: Colors.red.shade100,
                             ))
                         .toList()));
           }).toList());
