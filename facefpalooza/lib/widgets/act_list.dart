@@ -10,7 +10,7 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueGrey[900], // Fundo usando cor da paleta Material Design
+      color: Colors.blueGrey[900], // Fundo do container
       child: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('acts').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -23,17 +23,26 @@ class ActList extends StatelessWidget {
           return ListView(
             children: list.map<Widget>((act) {
               return ListTile(
-                leading: CircleAvatar(
-                  child: Text("${act['day']}"),
-                  foregroundColor: Color(0xFFFAFAFA), // Texto branco no avatar
-                ),
-                title: Text(
-                  act['name'],
-                  style: TextStyle(
-                    fontSize: 20, // Tamanho maior da fonte
-                    fontWeight: FontWeight.bold, // Texto em negrito
-                    color: Color(0xFFFAFAFA), // Cor do texto para branco
-                  ),
+                leading: null, // Removemos o `leading` padrão
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Alinha o conteúdo
+                  children: [
+                    Text(
+                      act['name'], // Nome do ato
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    CircleAvatar(
+                      child: Text(
+                        "${act['day']}", // Data
+                        style: const TextStyle(color: Colors.white), // Texto branco no avatar
+                      ),
+                      backgroundColor: Colors.deepPurple,
+                    ),
+                  ],
                 ),
                 subtitle: Wrap(
                   spacing: 8,
@@ -42,9 +51,9 @@ class ActList extends StatelessWidget {
                       .map<Widget>((tag) => Chip(
                             label: Text(
                               "#$tag",
-                              style: TextStyle(color: Color(0xFF212121)), // Texto preto no chip
+                              style: const TextStyle(color: Colors.black), // Texto preto no chip
                             ),
-                            backgroundColor: Color(0xFFFAFAFA),
+                            backgroundColor: Colors.white,
                           ))
                       .toList(),
                 ),
