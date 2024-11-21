@@ -6,6 +6,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,103 +38,124 @@ class Layout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Primeira linha - Nome completo, centralizado - Cor Azul
+        // Primeira linha com o nome completo branca, com fonte negrito tamanho 30.
+        // Criando um Row para a primeira linha, dentro do children um expanded dentro dele
+        //criado um container como a altura e a cor de fundo
+        //apos um text para colocar um texto dentro da linha, apos isso o style do texto 
         Row(
           children: [
             Expanded(
-              child: Container( //child que controla toda a primeira linha
-                color: Colors.blue[400],
-                height: 150,
-                child: const Center( //Child que controla a parte do nome
+              child: Container(
+                color: Colors.red[400],
+                height: 100,
+                child: const Center(
                   child: Text(
-                    'Lucas Henrique Bizzi',
+                    'Arthur Saltori Stante',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
             ),
           ],
         ),
-        // Segunda linha - Data da prova, centralizado - Cor rosa
+        // segunda linha com a data da prova em cor verde limão, tonalidade 200,
+        //centralizado horizontalmente.
+        // outra Row criada com os mesmo atribuitos porem neste container a cor do fundo foi alterada
+        // e o text tambem tanto o que esta escrito como a cor dele 
         Row(
           children: [
             Expanded(
-              child: Container(// child que controla a segunda linha
-                color: Colors.pink[400],
-                height: 150,
-                child: const Center(//child que controla a parte da data
+              child: Container(
+                color: Colors.deepPurpleAccent[400],
+                height: 100,
+                child: Center(
                   child: Text(
-                    'Data da Prova: 19/09/2024',
+                    'Data da Prova: 19 / 09 / 2024',
                     style: TextStyle(
-                      color: Colors.lime,
+                      color: Colors.lime[200], 
                       fontSize: 25,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
             ),
           ],
         ),
-        // Terceira linha - Quatro colunas - Três linhas que possuem um ícone, e uma que possui dois ícones
+        // linha com quatro colunas, com icones aleatorios 
+        //aqui criamos somente um expanded sem o row porem atribuimos um child:Row para realizar que as colunas criadas apos fiquem na mesma linha
+        //cada container tem uma coluna onde em cada uma tem um background com cor diferente
+        // e em cada coluna tem um icone excessão da segunda coluna onde temos 2 icones
         Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [//children que controla toda a linha com as quatro colunas
-              // Primeira coluna - Um ícone na cor branca (casa) - Cinza
+            children: [
               Expanded(
-                child: Container( //child primeira coluna
-                  color: Colors.grey[400],
-                  child: const Icon(Icons.home, size: 50, color: Colors.white),
-                ),
-              ),
-              // Segunda coluna - Dois ícones (um no topo, outro no final(estrela e coração)) - Amarelo
-              Expanded(
-                child: Container(//child segunda coluna
-                  color: Colors.yellow[400],
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Icon(Icons.star, size: 50, color: Colors.white),
-                      Icon(Icons.favorite, size: 50, color: Colors.white),
+                child: Container(
+                  color: Colors.pink[400],
+                  child: Column( 
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [ 
+                    Icon(Icons.home, size: 50, color: Colors.white), 
                     ],
                   ),
                 ),
               ),
-              // Terceira coluna - Um ícone - Azul
-              Expanded(//child terceira coluna
+              Expanded(
                 child: Container(
-                  color: Colors.blue[400],
-                  child: const Icon(Icons.person, size: 50, color: Colors.white),
+                  color: Colors.green[400],
+                  child: Column( 
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [ 
+                    Icon(Icons.grade, size: 50, color: Colors.white), 
+                    Icon(Icons.refresh, size: 50, color: Colors.white), 
+                    ],
+                  ),
                 ),
               ),
-              // Quarta coluna - Um ícone - Verde
-              Expanded(//child quarta coluna
+              Expanded(
                 child: Container(
-                  color: Colors.teal[400],
-                  child: const Icon(Icons.exit_to_app, size: 50, color: Colors.white),
+                  color: Colors.blue[400],
+                  child: Column( 
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [ 
+                    Icon(Icons.login, size: 50, color: Colors.white), 
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  color: Colors.purple[400],
+                  child: Column( 
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [ 
+                    Icon(Icons.apps, size: 50, color: Colors.white), 
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
         ),
-        // Última linha - Nome da turma, alinhado à direita - Vermelho
+        // ultima linha com o nome da turma alinhado a direita em itálico, em fonte
+        // tamanho 25.
+        // criamos outra row para seguir embaixo das colunas como linha e nesta linhas temos
+        // um background diferente das demais e um text diferente com um alinhamento na direita
+        // e um fontstyle mudando a a escrita para italico e e uma fonte da letra de 25px
         Row(
-          children: [//children que controla a última linha
+          children: [
             Expanded(
               child: Container(
-                color: Colors.red[400],
-                height: 100,
-                alignment: Alignment.centerRight,
-                child: const Padding(//child que controla a parte do escrito turma
-                  padding: EdgeInsets.all(16.0),
+                color: Colors.yellow[400],
+                height: 90,
+                child: const Align(
+                  alignment: Alignment.centerRight,
                   child: Text(
-                    'Eng. de Software - 6° Semestre de 2024',
+                    '6º Semestre / Engenharia de Software',
                     style: TextStyle(
                       fontSize: 25,
                       fontStyle: FontStyle.italic,

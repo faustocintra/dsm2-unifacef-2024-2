@@ -1,37 +1,47 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../data/act.dart';
 
 class ActList extends StatelessWidget {
-  const ActList({Key? key}) : super(key: key);
+  const ActList({super.key});
 
+  final data = lineup;
+
+//Foi criado do Widget e feita suas alterações de cores
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance
-          .collection('bands') // Nome da coleção no Firebase
-          .orderBy('day') // Ordena por dia
-          .orderBy('relevance', descending: true) // Ordena por relevância
-          .snapshots(),
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return Center(child: Text('Erro ao carregar dados.'));
-        }
+    return StreamBuilder(
+      stream: FirebaseFirestore.instance.collection('acts').snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (!snapshot.hasData) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
-        final data = snapshot.data!.docs;
-        return ListView.builder(
-          itemCount: data.length,
-          itemBuilder: (context, index) {
-            final band = data[index].data() as Map<String, dynamic>;
+
+        var list = snapshot.data?.docs ?? [];
+
+        return ListView(
+          children: list.map<Widget>((act) {
             return ListTile(
+              leading: CircleAvatar(child: Text("${act['day']}")),
               title: Text(
-                band['name'], // Nome da banda
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold), // Fonte maior e negrito
+                act['name'],
+                style: TextStyle(fontWeight: FontWeight.bold), // Colocando o nome em negrito
               ),
-              subtitle: Text('Dia: ${band['day']}'),
+             subtitle: Wrap(
+             spacing: 8,
+             runSpacing: 4,
+             children: act['tags']
+      .map<Widget>((tag) => Chip(
+  label: Text("#$tag"),
+  backgroundColor: Theme.of(context).colorScheme.secondary, // Usando a cor primária do tema
+  labelStyle: TextStyle(color: Colors.white), // Cor do texto dentro do Chip
+)
+) // Criando um Chip para cada tag
+      .toList(),
+),
+
             );
-          },
+          }).toList(),
         );
       },
     );
