@@ -26,7 +26,6 @@ class ActList extends StatelessWidget {
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                leading: CircleAvatar(child: Text("${act['day']}")),
                 title: Text(
                   act['name'],
                   //Adicionando style para definir a fonte como "bold", negrito
@@ -37,7 +36,11 @@ class ActList extends StatelessWidget {
                     runSpacing: 4,
                     children: act['tags']
                         .map<Widget>((tag) => Chip(label: Text("#$tag")))
-                        .toList()));
+                        .toList()),
+
+                // Troquei a linha para o final para maior legibilidade, tendo em vista que este elemento está no final da linha agora. Além disso alterei de leading para trailing, para que ficasse no fim, efetivamente a direita
+                trailing: CircleAvatar(child: Text("${act['day']}")),
+                );
           }).toList());
         });
   }
