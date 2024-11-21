@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facefpalooza',
+      debugShowCheckedModeBanner: false, // Tirando o banner "debug"
       // Definindo o tema com base na função "lightModeEnable" da pasta provider/mode_provider.dart 
       theme: Provider.of<ModeProvider>(context).lightModeEnable
           ? ModeTheme.lightMode // Se o modo claro tiver habilitado, o thema será light
@@ -81,7 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
         body:
-            const ActList() // This trailing comma makes auto-formatting nicer for build methods.
+            const ActList()
+            // This trailing comma makes auto-formatting nicer for build methods.
         );
   }
 }
