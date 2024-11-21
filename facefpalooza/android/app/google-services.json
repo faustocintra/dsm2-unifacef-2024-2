@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "250696509709",
+    "project_id": "facefpalooza-fc1a2",
+    "storage_bucket": "facefpalooza-fc1a2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250696509709:android:9bc4eacebc9b902fda2844",
+        "android_client_info": {
+          "package_name": "br.facef.facefpalooza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuIT7cHlEDnQaT1EAH45qgBEF-5aKhi7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
