@@ -18,12 +18,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Facefpalooza',
-      debugShowCheckedModeBanner: false, // Desativa o banner de depuração
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      darkTheme: ThemeData.dark().copyWith(
+      debugShowCheckedModeBanner: false,
+      darkTheme: ThemeData.dark().copyWith( // mudando o tema para dark
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
           brightness: Brightness.dark,
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       themeMode: ThemeMode.system, // Usa o tema conforme a preferência do sistema
-      home: const MyHomePage(title: 'Facefpalooza'),
+      home: const MyHomePage(title: 'Icaro Faria de Oliveira'),
     );
   }
 }

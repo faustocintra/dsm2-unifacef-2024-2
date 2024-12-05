@@ -10,7 +10,7 @@ class ActList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueGrey[900], // Fundo usando cor da paleta Material Design
+      color: Colors.blueGrey[900], // Fundo do container
       child: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('acts').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -20,44 +20,50 @@ class ActList extends StatelessWidget {
 
           var list = snapshot.data?.docs ?? [];
 
+          // Ordena a lista alfabeticamente pelo nome
+          list.sort((a, b) {
+            String nameA = a['name'].toString().toLowerCase();
+            String nameB = b['name'].toString().toLowerCase();
+            return nameA.compareTo(nameB);
+          });
+
           return ListView(
             children: list.map<Widget>((act) {
               return ListTile(
-                leading: CircleAvatar(
-                  child: Icon(Icons.music_note), // Ícone ou qualquer outro elemento
-                  foregroundColor: Color(0xFFFAFAFA),
-                ),
+                leading: null, // Removemos o `leading` padrão
                 title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Move a data para o lado direito
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Alinha o conteúdo
                   children: [
                     Text(
-                      act['name'],
-                      style: TextStyle(
+                      act['name'], // Nome do ato
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFFFAFAFA),
+                        color: Colors.white,
                       ),
                     ),
-                    Text(
-                      'Dia ${act['day']}', // Mostra a data à direita
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white, // Ajuste a cor conforme necessário
+                    CircleAvatar(
+                      child: Text(
+                        "${act['day']}", // Data
+                        style: const TextStyle(color: Colors.white), // Texto branco no avatar
                       ),
+                      backgroundColor: Colors.deepPurple,
                     ),
                   ],
                 ),
                 subtitle: Wrap(
                   spacing: 8,
                   runSpacing: 4,
-                  children: act['tags']
+                  children: (act['tags'] as List<dynamic>)
                       .map<Widget>((tag) => Chip(
                             label: Text(
                               "#$tag",
-                              style: TextStyle(color: Color(0xFF212121)),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontStyle: FontStyle.italic, // Texto em itálico
+                              ),
                             ),
-                            backgroundColor: Color(0xFFFAFAFA),
+                            backgroundColor: Colors.white,
                           ))
                       .toList(),
                 ),
