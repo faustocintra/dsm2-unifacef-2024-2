@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           ),
           themeMode: themeMode,
           home: MyHomePage(
-            title: 'Facefpalooza',
+            title: 'Ricardo de Lima Rosa Gomes',
             themeNotifier: _themeNotifier,
           ),
         );
