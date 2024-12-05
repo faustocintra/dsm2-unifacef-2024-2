@@ -1,117 +1,57 @@
 import 'package:flutter/material.dart';
-import 'widgets/act_list.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../data/act.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // Inicializa Firebase
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(const MyApp());
-}
+class ActList extends StatelessWidget {
+  const ActList({super.key});
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  ThemeMode _themeMode = ThemeMode.system;
-
-  // Alterna entre claro e escuro
-  void _toggleTheme() {
-    setState(() {
-      _themeMode =
-          _themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
-    });
-  }
-
-  // Controla o tema com ValueNotifier
-  final ValueNotifier<ThemeMode> _themeNotifier =
-      ValueNotifier(ThemeMode.system);
+  final data = lineup;
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<ThemeMode>(
-      valueListenable: _themeNotifier,
-      builder: (context, themeMode, child) {
-        return MaterialApp(
-          title: 'Facefpalooza',
-          debugShowCheckedModeBanner: false, // Remove faixa de debug
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
-          darkTheme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.deepPurple,
-              brightness: Brightness.dark,
-            ),
-            useMaterial3: true,
-          ),
-          themeMode: themeMode, // Define o tema
-          home: MyHomePage(
-            title: 'Facefpalooza',
-            themeNotifier: _themeNotifier,
-          ),
-        );
-      },
-    );
-  }
-}
+    return StreamBuilder(
+        
+        stream: FirebaseFirestore.instance
+            .collection('acts')
+            .orderBy('name') // Ordenando por ondem alfabetica
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({
-    super.key,
-    required this.title,
-    required this.themeNotifier,
-  });
+          var list = snapshot.data?.docs ?? [];
 
-  final String title;
-  final ValueNotifier<ThemeMode> themeNotifier;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
-        actions: [
-          // Botão para alternar o tema
-          IconButton(
-            icon: const Icon(Icons.brightness_6),
-            onPressed: () {
-              themeNotifier.value =
-                  themeNotifier.value == ThemeMode.dark
-                      ? ThemeMode.light
-                      : ThemeMode.dark;
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          const Expanded(child: ActList()),
-          // Botão para tema escuro
-          ValueListenableBuilder<ThemeMode>(
-            valueListenable: themeNotifier,
-            builder: (context, themeMode, child) {
-              return SwitchListTile(
-                title: const Text("Ativar tema escuro"),
-                value: themeMode == ThemeMode.dark,
-                onChanged: (value) {
-                  themeNotifier.value =
-                      value ? ThemeMode.dark : ThemeMode.light;
-                },
-              );
-            },
-          ),
-        ],
-      ),
-    );
+          return ListView(
+              children: list.map<Widget>((act) {
+            return ListTile(
+                trailing: CircleAvatar(
+                    child: Text(
+                  "${act['day']}",
+                )),
+                title: Text(
+                 
+                  act['name'],
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                subtitle: Wrap(
+                    spacing: 8,
+                    runSpacing: 4,
+                    children: act['tags']
+                        .map<Widget>((tag) => Chip(
+                              label: Text(
+                                "#$tag",
+                                style: const TextStyle(color: Colors.black,
+                                                      fontStyle: FontStyle.italic,),  // Fonte em itálico
+                              ),
+                              //Adicionei fundo ao chip
+                              backgroundColor: Colors.blue,
+                            ))
+                        .toList()));
+          }).toList());
+        });
   }
 }

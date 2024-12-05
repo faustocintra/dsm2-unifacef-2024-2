@@ -4,39 +4,39 @@ import '../data/act.dart';
 
 class ActList extends StatelessWidget {
   const ActList({super.key});
+
   final data = lineup;
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        // Ordenação no Firestore: primeiro por 'day', depois por 'relevance' (decrescente)
+        
         stream: FirebaseFirestore.instance
             .collection('acts')
-            .orderBy('day')
-            .orderBy('relevance', descending: true)
+            .orderBy('name') // Ordenando por ondem alfabetica
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
-            // Exibe loading se não há dados
             return const Center(child: CircularProgressIndicator());
           }
+
           var list = snapshot.data?.docs ?? [];
+
           return ListView(
               children: list.map<Widget>((act) {
             return ListTile(
-                // Ícone à esquerda com o número do dia
-                leading: CircleAvatar(child: Text("${act['day']}")),
-                // Ícone à direita com o número do dia
                 trailing: CircleAvatar(
-                  child: Text("${act['day']}"),
-                ),
-                // Nome do artista com estilo negrito e maior fonte
+                    child: Text(
+                  "${act['day']}",
+                )),
                 title: Text(
+                 
                   act['name'],
                   style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
-                // Lista de tags com estilo de Chip
                 subtitle: Wrap(
                     spacing: 8,
                     runSpacing: 4,
@@ -44,13 +44,11 @@ class ActList extends StatelessWidget {
                         .map<Widget>((tag) => Chip(
                               label: Text(
                                 "#$tag",
-                                style: const TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black,
+                                                      fontStyle: FontStyle.italic,),  // Fonte em itálico
                               ),
-                              // Cor de fundo do Chip com opacidade
-                              backgroundColor: Theme.of(context)
-                                  .colorScheme
-                                  .primary
-                                  .withOpacity(0.2),
+                              //Adicionei fundo ao chip
+                              backgroundColor: Colors.blue,
                             ))
                         .toList()));
           }).toList());
