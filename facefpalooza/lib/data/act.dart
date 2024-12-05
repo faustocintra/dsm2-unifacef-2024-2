@@ -6,10 +6,11 @@ class Act {
   final int day;
   final int relevance;
   final List<String> tags;
-
   // Construtor
   const Act(this.name, this.day, this.relevance, this.tags);
 }
+
+
 
 // Lineup
 const lineup = [
